@@ -5,10 +5,10 @@ SpinParser is a software platform to perform pseudofermion functional renormaliz
 The pf-FRG algorithm has first been proposed in [[Reuther and Wölfle (2010)](http://dx.doi.org/10.1103/PhysRevB.81.144410)] for Heisenberg models on two-dimensional lattices geometries. 
 
 The current implementation of the SpinParser is based on a generalized approach [[Buessen et al. (2019)](http://dx.doi.org/10.1103/PhysRevB.100.125164)] which allows to solve general quantum spin Hamiltonians of the form 
-```math
-H = \sum_{i,j} J^{\mu\nu}_{ij} S^\mu_i S^\nu_j
-```
-where the sum over lattice sites i and j is defined on arbitrary two- or three-dimensional lattices and the spin operator $`S_i^\mu`$ resembles the $`\mu=x,y,z`$ component of a spin-1/2 moment at lattice site i.
+
+<p align="center"><img src="doc/assets/equation_1.png"></p>
+
+where the sum over lattice sites i and j is defined on arbitrary two- or three-dimensional lattices and the spin operator <img src="doc/assets/equation_2.png" style="vertical-align:-4pt"> resembles the <img src="doc/assets/equation_3.png" style="vertical-align:-3pt"> component of a spin-1/2 moment at lattice site i.
 
 ## Overview
 
@@ -81,11 +81,11 @@ mkdir spinParser && cd spinParser
 ```
 Next, clone a copy of the source files
 ```bash
-git clone git@github.com:fbuessen/spinParser.git spinParserSource
+git clone git@github.com:fbuessen/SpinParser.git spinParserSource
 ```
 which should leave you with a directory `spinParserSource`, which, among other files and subdirectories, contains a file `CMakeLists.txt`. 
 
-### Build sources
+### Build from source
 
 Now it is time to compile the sources. It is recommended to build the software in a separate directory, which we will name `build`. 
 Furthermore, we want to create a directory `install` to which the final compiled software will be moved. 
@@ -138,6 +138,13 @@ The file structure in this directory should look something like
 	+ examples/
 		- squarelattice-AFM.xml
 		...
+	+ opt/
+		+ mathematica/
+			- spinparser.m
+		+ python/
+			+ spinparser
+				- ldf.py
+				- obs.py 
 	+ res/
 		- lattices.xml
 		- models.xml
@@ -183,9 +190,9 @@ An example task file is included in the SpinParser installation under `install/e
 </task>
 ```
 This example defines an exponential frequency discretization, specified in the block `<frequency discretization="exponential">`. The distribution is generated symmetrically around zero with 32 frequencies in the range from 0.005 to 50.0, i.e., a total of 64 frequencies are used in the computation. 
-Alternativelt, an explicit list of values can specified by choosing `discretization="manual"` and providing the values as child nodes `<value>0.005</value> [...] <value>50.0</value>`. 
+Alternatively, an explicit list of values can specified by choosing `discretization="manual"` and providing the values as child nodes `<value>0.005</value> [...] <value>50.0</value>`. 
 
-The cutoff discretization is automatically generated as an exponential distribution $`\Lambda_n=50.0*0.95^n`$ down to the smallest cutoff value $`\Lambda_N=0.1`$, according to the specification in the node `<cutoff discretization="exponential">`. 
+The cutoff discretization is automatically generated as an exponential distribution <img src="doc/assets/equation_4.png" style="vertical-align:-3pt"> down to the smallest cutoff value <img src="doc/assets/equation_5.png" style="vertical-align:-3pt">, according to the specification in the node `<cutoff discretization="exponential">`. 
 Just like in the specification of the frequency discretization, it is also possible to specify `discretization="manual"`.
 
 The lattice graph `<lattice name="square" range="4"/>` will be generated to include all lattice sites up to a four lattice-bond radius around a reference site. The name of the lattice, `square`, is a reference to a lattice definition found elsewhere. The actual lattice definition is found in the resource file `install/res/lattices.xml` file: 
@@ -223,7 +230,7 @@ Alternatively, the resource search path can be set manually by specifying the `-
 The model definition comprises a list two-spin interactions. All interactions for one lattice unit cell need to be specified, the rest is inferred by periodicity of the lattice. 
 The interaction is between two lattice sites `from` and `to`, each referenced by a tuple (a1,a2,a3,b), corresponding to the lattice site in unit cell (a1,a2,a3) (in units of the lattice vectors) and basis site ID b. 
 The two-spin interaction type in this example is a Heisenberg interaction. 
-Any interaction can be specified explicitly by replacing `heisenberg` with `xy` which would correspond to the two-spin interaction $`S_\mathrm{from}^x S_\mathrm{to}^y`$. 
+Any interaction can be specified explicitly by replacing `heisenberg` with `xy` which would correspond to the two-spin interaction <img src="doc/assets/equation_6.png" style="vertical-align:-4pt">. 
 The `parameter` name is referenced in the task file to assign a numerical value to the coupling. 
 In our example above, in the line `<j>1.0</j>`, it is set to 1.0, with the sign convention such that the interaction is antiferromagnetic. 
 
@@ -256,7 +263,7 @@ As the calculation progresses, an output file `install/examples/squarelattice-AF
 
 ### Evaluate SpinParser output and measurements
 The result file `install/examples/squarelattice-AFM.obs` is an hdf5 file which contains the two-spin correlation measurements. 
-It contains datasets like `/SU2CorZZ/data/measurement_0/data`, which is a list of two-spin correlations $`S^z_0 S_n^z`$ with lattice sites n in the same order as listed in `/SU2CorZZ/meta/sites`. 
+It contains datasets like `/SU2CorZZ/data/measurement_0/data`, which is a list of two-spin correlations <img src="doc/assets/equation_7.png" style="vertical-align:-4pt"> with lattice sites n in the same order as listed in `/SU2CorZZ/meta/sites`. 
 Every dataset is performed at the cutoff value as specified in the attribute `/SU2CorZZ/data/measurement_0/cutoff`. 
 
 The data is now ready to be extracted and analyzed. 
