@@ -13,15 +13,15 @@ jobs:
           CMAKE_C_COMPILER: g++
           CMAKE_CXX_COMPILER: g++
         run: |
-          sudo apt install -y cmake libboost-all-dev libhdf5-dev libopenmpi-dev doxygen graphviz python
-          pip install numpy h5py
+          sudo apt install -y cmake libboost-all-dev libhdf5-dev libopenmpi-dev doxygen graphviz python3
+          python -m pip install numpy h5py
       - name: Build
         run: |
           mkdir install && cmake -B ${{ github.workspace }}/build -DCMAKE_INSTALL_PREFIX=${{ github.workspace }}/install
           cmake --build ${{github.workspace}}/build --parallel 4
       - name: Test
         working-directory: ${{ github.workspace }}/build
-        run: ctest
+        run: ctest --verbose
       - name: Install
         run: cmake --install ${{github.workspace}}/build
       - name: Deploy documentation
