@@ -53,7 +53,7 @@ To ensure that all these libraries are installed, invoke the following OS specif
 *Linux:*
 
 ```bash
-sudo apt install cmake libboost-dev libhdf5-dev libopenmpi-dev doxygen graphviz python
+sudo apt install cmake libboost-all-dev libhdf5-dev libopenmpi-dev doxygen graphviz python
 ```
 
 ```bash
