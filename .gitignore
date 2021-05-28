@@ -1,0 +1,6 @@
+doc/html
+/examples/*.ldf
+/examples/*.obs
+/examples/*.data
+/examples/*.checkpoint
+*.pyc

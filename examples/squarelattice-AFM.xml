@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<task>
+	<parameters>
+		<frequency discretization="exponential">
+			<min>0.005</min>
+			<max>50.0</max>
+			<count>32</count>
+		</frequency>
+		<cutoff discretization="exponential">
+			<min>0.1</min>
+			<max>50</max>
+			<step>0.95</step>
+		</cutoff>
+		<lattice name="square" range="4"/>
+		<model name="square-heisenberg" symmetry="SU2">
+			<j>1.0</j>
+		</model>
+	</parameters>
+	<measurements>
+		<measurement name="correlation"/>
+	</measurements>
+</task>

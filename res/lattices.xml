@@ -1,0 +1,173 @@
+<unitcell name="square">
+	<primitive x="1" y="0" z="0" />
+	<primitive x="0" y="1" z="0" />
+	<primitive x="0" y="0" z="1" />
+
+	<site x="0" y="0" z="0" />
+
+	<bond from="0" to="0" dx="1" dy="0" dz="0" />
+	<bond from="0" to="0" dx="0" dy="1" dz="0" />
+</unitcell>
+
+<unitcell name="triangular">
+	<primitive x="sqrt(3)/2" y="-1/2" z="0" />
+	<primitive x="sqrt(3)/2" y="1/2" z="0" />
+	<primitive x="0" y="0" z="1" />
+
+	<site x="0" y="0" z="0" />
+
+	<bond from="0" to="0" dx="0" dy="-1" dz="0" />
+	<bond from="0" to="0" dx="-1" dy="0" dz="0" />
+	<bond from="0" to="0" dx="-1" dy="1" dz="0" />
+</unitcell>
+
+<unitcell name="honeycomb">
+	<primitive x="3/2" y="sqrt(3)/2" z="0" />
+	<primitive x="3/2" y="-sqrt(3)/2" z="0" />
+	<primitive x="0" y="0" z="1" />
+
+	<site x="0" y="0" z="0" />
+	<site x="1" y="0" z="0" />
+
+	<bond from="0" to="1" dx="0" dy="0" dz="0" />
+	<bond from="1" to="0" dx="1" dy="0" dz="0" />
+	<bond from="1" to="0" dx="0" dy="1" dz="0" />
+</unitcell>
+
+<unitcell name="kagome">
+	<primitive x="2" y="0" z="0" />
+	<primitive x="1" y="sqrt(3)" z="0" />
+	<primitive x="0" y="0" z="1" />
+
+	<site x="0" y="0" z="0" />
+	<site x="1" y="0" z="0" />
+	<site x="1/2" y="sqrt(3)/2" z="0" />
+
+	<bond from="0" to="1" dx="0" dy="0" dz="0" />
+	<bond from="0" to="2" dx="0" dy="0" dz="0" />
+	<bond from="1" to="2" dx="0" dy="0" dz="0" />
+	<bond from="1" to="0" dx="1" dy="0" dz="0" />
+	<bond from="2" to="0" dx="0" dy="1" dz="0" />
+	<bond from="2" to="1" dx="-1" dy="1" dz="0" />
+</unitcell>
+
+<unitcell name="cubic">
+	<primitive x="1" y="0" z="0" />
+	<primitive x="0" y="1" z="0" />
+	<primitive x="0" y="0" z="1" />
+
+	<site x="0" y="0" z="0" />
+
+	<bond from="0" to="0" dx="1" dy="0" dz="0" />
+	<bond from="0" to="0" dx="0" dy="1" dz="0" />
+	<bond from="0" to="0" dx="0" dy="0" dz="1" />
+</unitcell>
+
+<unitcell name="fcc">
+	<primitive x="0" y="1/sqrt(2)" z="1/sqrt(2)" />
+	<primitive x="1/sqrt(2)" y="0" z="1/sqrt(2)" />
+	<primitive x="1/sqrt(2)" y="1/sqrt(2)" z="0" />
+
+	<site x="0" y="0" z="0" />
+
+	<bond from="0" to="0" dx="1" dy="0" dz="0" />
+	<bond from="0" to="0" dx="0" dy="1" dz="-1" />
+	<bond from="0" to="0" dx="0" dy="1" dz="0" />
+	<bond from="0" to="0" dx="-1" dy="0" dz="1" />
+	<bond from="0" to="0" dx="0" dy="0" dz="1" />
+	<bond from="0" to="0" dx="-1" dy="1" dz="0" />
+</unitcell>
+
+<unitcell name="diamond">
+	<primitive x="0" y="2/sqrt(3)" z="2/sqrt(3)" />
+	<primitive x="2/sqrt(3)" y="0" z="2/sqrt(3)" />
+	<primitive x="2/sqrt(3)" y="2/sqrt(3)" z="0" />
+
+	<site x="0" y="0" z="0" />
+	<site x="1/sqrt(3)" y="1/sqrt(3)" z="1/sqrt(3)" />
+
+	<bond from="0" to="1" dx="0" dy="0" dz="0" />
+	<bond from="1" to="0" dx="1" dy="0" dz="0" />
+	<bond from="1" to="0" dx="0" dy="1" dz="0" />
+	<bond from="1" to="0" dx="0" dy="0" dz="1" />
+</unitcell>
+
+<unitcell name="hyperoctagon">
+	<primitive x="sqrt(8)" y="0" z="0" />
+	<primitive x="sqrt(8)/2" y="sqrt(8)/2" z="-sqrt(8)/2" />
+	<primitive x="sqrt(8)/2" y="sqrt(8)/2" z="sqrt(8)/2" />
+
+	<site x="1/sqrt(8)" y="1/sqrt(8)" z="1/sqrt(8)" />
+	<site x="5/sqrt(8)" y="3/sqrt(8)" z="-1/sqrt(8)" />
+	<site x="3/sqrt(8)" y="1/sqrt(8)" z="-1/sqrt(8)" />
+	<site x="7/sqrt(8)" y="3/sqrt(8)" z="1/sqrt(8)" />
+
+	<bond from="0" to="2" dx="0" dy="0" dz="0" />
+	<bond from="1" to="2" dx="0" dy="0" dz="0" />
+	<bond from="1" to="3" dx="0" dy="0" dz="0" />
+	<bond from="1" to="0" dx="0" dy="1" dz="0" />
+	<bond from="3" to="2" dx="0" dy="0" dz="1" />
+	<bond from="3" to="0" dx="1" dy="0" dz="0" />
+</unitcell>
+
+<unitcell name="hyperkagome">
+	<primitive x="2*sqrt(2)" y="0" z="0" />
+	<primitive x="0" y="2*sqrt(2)" z="0" />
+	<primitive x="0" y="0" z="2*sqrt(2)" />
+
+	<site x="7/2/sqrt(2)" y="1/2/sqrt(2)" z="1/2/sqrt(2)" />
+	<site x="5/2/sqrt(2)" y="3/2/sqrt(2)" z="1/2/sqrt(2)" />
+	<site x="7/2/sqrt(2)" y="3/2/sqrt(2)" z="3/2/sqrt(2)" />
+	<site x="7/2/sqrt(2)" y="5/2/sqrt(2)" z="5/2/sqrt(2)" />
+	<site x="5/2/sqrt(2)" y="5/2/sqrt(2)" z="7/2/sqrt(2)" />
+	<site x="3/2/sqrt(2)" y="3/2/sqrt(2)" z="7/2/sqrt(2)" />
+	<site x="3/2/sqrt(2)" y="1/2/sqrt(2)" z="5/2/sqrt(2)" />
+	<site x="1/2/sqrt(2)" y="1/2/sqrt(2)" z="7/2/sqrt(2)" />
+	<site x="5/2/sqrt(2)" y="7/2/sqrt(2)" z="5/2/sqrt(2)" />
+	<site x="3/2/sqrt(2)" y="7/2/sqrt(2)" z="3/2/sqrt(2)" />
+	<site x="1/2/sqrt(2)" y="7/2/sqrt(2)" z="1/2/sqrt(2)" />
+	<site x="1/2/sqrt(2)" y="5/2/sqrt(2)" z="3/2/sqrt(2)" />
+	
+	<bond from="0" to="1" dx="0" dy="0" dz="0" />
+	<bond from="1" to="2" dx="0" dy="0" dz="0" />
+	<bond from="0" to="2" dx="0" dy="0" dz="0" />
+	<bond from="2" to="3" dx="0" dy="0" dz="0" />
+	<bond from="3" to="4" dx="0" dy="0" dz="0" />
+	<bond from="3" to="8" dx="0" dy="0" dz="0" />
+	<bond from="4" to="8" dx="0" dy="0" dz="0" />
+	<bond from="4" to="5" dx="0" dy="0" dz="0" />
+	<bond from="5" to="6" dx="0" dy="0" dz="0" />
+	<bond from="5" to="7" dx="0" dy="0" dz="0" />
+	<bond from="6" to="7" dx="0" dy="0" dz="0" />
+	<bond from="6" to="8" dx="0" dy="-1" dz="0" />
+	<bond from="6" to="9" dx="0" dy="-1" dz="0" />
+	<bond from="8" to="9" dx="0" dy="0" dz="0" />
+	<bond from="9" to="10" dx="0" dy="0" dz="0" />
+	<bond from="9" to="11" dx="0" dy="0" dz="0" />
+	<bond from="10" to="11" dx="0" dy="0" dz="0" />
+	<bond from="0" to="7" dx="1" dy="0" dz="-1" />
+	<bond from="0" to="10" dx="1" dy="-1" dz="0" />
+	<bond from="2" to="11" dx="1" dy="0" dz="0" />
+	<bond from="3" to="11" dx="1" dy="0" dz="0" />
+	<bond from="4" to="1" dx="0" dy="0" dz="1" />
+	<bond from="5" to="1" dx="0" dy="0" dz="1" />
+	<bond from="7" to="10" dx="0" dy="-1" dz="1" />
+</unitcell>
+
+<unitcell name="hyperhoneycomb">
+	<primitive x="-1/sqrt(2)" y="1/sqrt(2)" z="-2/sqrt(2)" />
+	<primitive x="-1/sqrt(2)" y="1/sqrt(2)" z="2/sqrt(2)" />
+	<primitive x="2/sqrt(2)" y="4/sqrt(2)" z="0" />
+
+	<site x="0" y="0" z="0" />
+	<site x="1/sqrt(2)" y="1/sqrt(2)" z="0" />
+	<site x="1/sqrt(2)" y="2/sqrt(2)" z="1/sqrt(2)" />
+	<site x="0" y="-1/sqrt(2)" z="1/sqrt(2)" />
+
+	<bond from="0" to="1" dx="0" dy="0" dz="0" />
+	<bond from="0" to="3" dx="0" dy="0" dz="0" />
+	<bond from="0" to="3" dx="1" dy="0" dz="0" />
+	<bond from="1" to="2" dx="0" dy="0" dz="0" />
+	<bond from="1" to="2" dx="0" dy="-1" dz="0" />
+	<bond from="2" to="3" dx="0" dy="0" dz="1" />
+</unitcell>
