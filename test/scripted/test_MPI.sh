@@ -71,7 +71,7 @@ function cleanup {
 #run executable
 for CORE in SU2 XYZ TRI ; do 
     ${TEST_EXECUTABLE} -f ${TEST_WORK_DIR}/${TEST_NAME}.${CORE}.NMPI.xml
-    ${TEST_MPIEXEC_EXECUTABLE} ${TEST_MPIEXEC_NUMPROC_FLAG} 4 --use-hwthread-cpus ${TEST_EXECUTABLE} -f ${TEST_WORK_DIR}/${TEST_NAME}.${CORE}.MPI.xml
+    ${TEST_MPIEXEC_EXECUTABLE} ${TEST_MPIEXEC_NUMPROC_FLAG} 2 ${TEST_EXECUTABLE} -f ${TEST_WORK_DIR}/${TEST_NAME}.${CORE}.MPI.xml
 done
 
 #evaluate test
