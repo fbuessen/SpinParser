@@ -1,3 +1,5 @@
+![](https://github.com/fbuessen/SpinParser/actions/workflows/build.yml/badge.svg)
+
 # SpinParser
 
 SpinParser is a software platform to perform pseudofermion functional renormalization group (pf-FRG) calculations to solve lattice spin models in quantum magnetism. 
