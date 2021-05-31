@@ -267,3 +267,8 @@ It contains datasets like `/SU2CorZZ/data/measurement_0/data`, which is a list o
 Every dataset is performed at the cutoff value as specified in the attribute `/SU2CorZZ/data/measurement_0/cutoff`. 
 
 The data is now ready to be extracted and analyzed. 
+
+## Developer documentation
+
+The SpinParser application, without modification, is already suited to solve a broad class of spin models on customizable lattice geometries. 
+However, some users might wish to modify or extend the code; for this purpose, a developer documentation of the underlying code exists and can be found [here](https://fbuessen.github.io/SpinParser).

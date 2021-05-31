@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 #set the project name
-project(spinParser VERSION 1.0 LANGUAGES C CXX)
+project(SpinParser VERSION 1.0 LANGUAGES C CXX)
 
 #define compile options
 option(SPINPARSER_BUILD_TESTS "Build tests" ON)
