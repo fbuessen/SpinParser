@@ -2,7 +2,7 @@
 
 # SpinParser
 
-SpinParser is a software platform to perform pseudofermion functional renormalization group (pf-FRG) calculations to solve lattice spin models in quantum magnetism. 
+SpinParser ("Spin Pseudofermion Algorithms for Research on Spin Ensembles via Renormalization") is a software platform to perform pseudofermion functional renormalization group (pf-FRG) calculations to solve lattice spin models in quantum magnetism. 
 
 The pf-FRG algorithm has first been proposed in [[Reuther and Wölfle (2010)](http://dx.doi.org/10.1103/PhysRevB.81.144410)] for Heisenberg models on two-dimensional lattices geometries. 
 
@@ -11,6 +11,21 @@ The current implementation of the SpinParser is based on a generalized approach 
 <p align="center"><img src="doc/assets/equation_1.png"></p>
 
 where the sum over lattice sites i and j is defined on arbitrary two- or three-dimensional lattices and the spin operator <img src="doc/assets/equation_2.png" style="vertical-align:-4pt"> resembles the <img src="doc/assets/equation_3.png" style="vertical-align:-3pt"> component of a spin-1/2 moment at lattice site i.
+
+
+## Table of contents
+- [Overview](#overview)
+- [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Download sources](#download-sources)
+  - [Build from source](#build-from-source)
+  - [Install optional tools](#install-optional-tools)
+- [Quick start](#quick-start)
+  - [Prepare a task file](#prepare-a-task-file)
+  - [Verify the model implementation](#verify-the-model-implementation)
+  - [Run the calculation](#run-the-calculation)
+  - [Evaluate SpinParser output and measurements](#evaluate-spinparser-output-and-measurements)
+- [Developer documentation](#developer-documentation)
 
 ## Overview
 
