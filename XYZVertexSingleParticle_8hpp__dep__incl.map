@@ -1,0 +1,6 @@
+<map id="/home/runner/work/SpinParser/SpinParser/src/XYZ/XYZVertexSingleParticle.hpp" name="/home/runner/work/SpinParser/SpinParser/src/XYZ/XYZVertexSingleParticle.hpp">
+<area shape="rect" id="node1" title="Single&#45;particle vertex implementation for models with diagonal interactions." alt="" coords="146,5,405,61"/>
+<area shape="rect" id="node2" href="$XYZEffectiveAction_8hpp.html" title="Implementation of a flowing effective action for models with diagonal interactions." alt="" coords="158,109,393,165"/>
+<area shape="rect" id="node3" href="$XYZFrgCore_8cpp.html" title="FrgCore implementation for models with diagonal interactions." alt="" coords="5,221,260,262"/>
+<area shape="rect" id="node4" href="$XYZMeasurementCorrelation_8cpp.html" title="Correlation measurement for models with diagonal interactions." alt="" coords="285,213,551,269"/>
+</map>

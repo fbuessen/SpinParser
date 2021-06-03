@@ -1,0 +1,6 @@
+<map id="/home/runner/work/SpinParser/SpinParser/src/SU2/SU2VertexSingleParticle.hpp" name="/home/runner/work/SpinParser/SpinParser/src/SU2/SU2VertexSingleParticle.hpp">
+<area shape="rect" id="node1" title="Single&#45;particle vertex implementation for SU(2) models." alt="" coords="146,5,405,61"/>
+<area shape="rect" id="node2" href="$SU2EffectiveAction_8hpp.html" title="Implementation of a flowing effective action for SU(2) models." alt="" coords="158,109,393,165"/>
+<area shape="rect" id="node3" href="$SU2FrgCore_8cpp.html" title="FrgCore implementation for SU(2) models." alt="" coords="5,221,260,262"/>
+<area shape="rect" id="node4" href="$SU2MeasurementCorrelation_8cpp.html" title="Correlation measurement for SU(2) models." alt="" coords="285,213,551,269"/>
+</map>

@@ -1,0 +1,39 @@
+<map id="/home/runner/work/SpinParser/SpinParser/src/FrgCore.hpp" name="/home/runner/work/SpinParser/SpinParser/src/FrgCore.hpp">
+<area shape="rect" id="node1" title="Numerics core for pf&#45;FRG calculations." alt="" coords="1142,5,1359,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="1566,333,1629,360"/>
+<area shape="rect" id="node3" href="$EffectiveAction_8hpp.html" title="Virtual implementation of a flowing effective action." alt="" coords="1177,251,1325,278"/>
+<area shape="rect" id="node13" href="$Measurement_8hpp.html" title="Abstract measurement protocol definition for pf&#45;FRG calculations." alt="" coords="961,169,1101,196"/>
+<area shape="rect" id="node19" href="$SpinModel_8hpp.html" title="Representation of a spin model with two&#45;spin interactions." alt="" coords="1885,169,2003,196"/>
+<area shape="rect" id="node27" href="$SpinParser_8hpp.html" title="Pf&#45;FRG solver implementation." alt="" coords="839,95,956,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="1177,333,1239,360"/>
+<area shape="rect" id="node5" href="$Log_8hpp.html" title="Lightweight logging interface with output filtering." alt="" coords="957,333,1051,360"/>
+<area shape="rect" id="node9" href="$Exception_8hpp.html" title="Descriptor object for exceptions." alt="" coords="1210,408,1345,435"/>
+<area shape="rect" id="node6" title=" " alt="" coords="964,408,1044,435"/>
+<area shape="rect" id="node7" title=" " alt="" coords="721,408,807,435"/>
+<area shape="rect" id="node8" title=" " alt="" coords="409,408,565,435"/>
+<area shape="rect" id="node10" title=" " alt="" coords="693,483,752,509"/>
+<area shape="rect" id="node11" title=" " alt="" coords="1292,483,1367,509"/>
+<area shape="rect" id="node12" title=" " alt="" coords="1181,483,1267,509"/>
+<area shape="rect" id="node14" href="$LoadManager_8hpp.html" title="Implementation of an automatic hybrid OpenMP / MPI load balancer." alt="" coords="728,251,885,278"/>
+<area shape="rect" id="node15" title=" " alt="" coords="731,333,795,360"/>
+<area shape="rect" id="node16" title=" " alt="" coords="819,333,883,360"/>
+<area shape="rect" id="node17" title=" " alt="" coords="560,333,619,360"/>
+<area shape="rect" id="node18" title=" " alt="" coords="643,333,706,360"/>
+<area shape="rect" id="node20" title=" " alt="" coords="2078,333,2133,360"/>
+<area shape="rect" id="node21" href="$Lattice_8hpp.html" title="Representation of a physical lattice." alt="" coords="1885,251,1979,278"/>
+<area shape="rect" id="node22" title=" " alt="" coords="1997,333,2053,360"/>
+<area shape="rect" id="node23" href="$Geometry_8hpp.html" title="Implementation of three&#45; and four&#45;dimensional vectors and matrices for geometric operations." alt="" coords="1840,333,1973,360"/>
+<area shape="rect" id="node26" href="$Assert_8hpp.html" title="Lightweight macro library for assertions." alt="" coords="1705,333,1815,360"/>
+<area shape="rect" id="node24" title=" " alt="" coords="1828,408,1895,435"/>
+<area shape="rect" id="node25" title=" " alt="" coords="1919,408,1982,435"/>
+<area shape="rect" id="node28" href="$Timestamp_8hpp.html" title="Provide formatted timestamp strings." alt="" coords="547,169,691,196"/>
+<area shape="rect" id="node29" href="$FrgCommon_8hpp.html" title="Hub for central objects in pf&#45;FRG calculations." alt="" coords="1521,169,1650,196"/>
+<area shape="rect" id="node34" href="$CommandLineOptions_8hpp.html" title="Parser for command line arguments." alt="" coords="5,169,200,196"/>
+<area shape="rect" id="node35" href="$TaskFileParser_8hpp.html" title="Task file parser routine." alt="" coords="275,169,416,196"/>
+<area shape="rect" id="node30" href="$FrequencyDiscretization_8hpp.html" title="Discretization of Matsubara frequency space." alt="" coords="1349,251,1555,278"/>
+<area shape="rect" id="node33" href="$CutoffDiscretization_8hpp.html" title="Representation of a discretized frequency cutoff axis." alt="" coords="1631,251,1809,278"/>
+<area shape="rect" id="node31" title=" " alt="" coords="1315,333,1400,360"/>
+<area shape="rect" id="node32" title=" " alt="" coords="1425,333,1490,360"/>
+<area shape="rect" id="node36" title=" " alt="" coords="115,251,157,278"/>
+<area shape="rect" id="node37" title=" " alt="" coords="182,244,333,285"/>
+</map>

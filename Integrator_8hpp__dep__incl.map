@@ -1,0 +1,9 @@
+<map id="/home/runner/work/SpinParser/SpinParser/src/lib/Integrator.hpp" name="/home/runner/work/SpinParser/SpinParser/src/lib/Integrator.hpp">
+<area shape="rect" id="node1" title="One&#45;dimensional numerical integration routines." alt="" coords="719,5,951,47"/>
+<area shape="rect" id="node2" href="$SU2FrgCore_8cpp.html" title="FrgCore implementation for SU(2) models." alt="" coords="5,102,260,143"/>
+<area shape="rect" id="node3" href="$SU2MeasurementCorrelation_8cpp.html" title="Correlation measurement for SU(2) models." alt="" coords="285,95,551,151"/>
+<area shape="rect" id="node4" href="$TRIFrgCore_8cpp.html" title="FrgCore implementation for time reversal invariant models." alt="" coords="576,102,820,143"/>
+<area shape="rect" id="node5" href="$TRIMeasurementCorrelation_8cpp.html" title="Correlation measurement for time reversal invariant models." alt="" coords="844,95,1101,151"/>
+<area shape="rect" id="node6" href="$XYZFrgCore_8cpp.html" title="FrgCore implementation for models with diagonal interactions." alt="" coords="1125,102,1380,143"/>
+<area shape="rect" id="node7" href="$XYZMeasurementCorrelation_8cpp.html" title="Correlation measurement for models with diagonal interactions." alt="" coords="1405,95,1671,151"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="HMP::LoadManagerSlave" name="HMP::LoadManagerSlave">
+<area shape="rect" id="node1" title="LoadManager slave implementation, responsible for receiving and executing workload chunks form a Load..." alt="" coords="5,80,189,107"/>
+<area shape="rect" id="node2" href="$classHMP_1_1LoadManager.html" title="Common load manager interface for both, the MPI server rank and slave ranks." alt="" coords="23,5,171,32"/>
+</map>

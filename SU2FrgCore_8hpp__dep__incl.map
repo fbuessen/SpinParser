@@ -1,0 +1,7 @@
+<map id="/home/runner/work/SpinParser/SpinParser/src/SU2/SU2FrgCore.hpp" name="/home/runner/work/SpinParser/SpinParser/src/SU2/SU2FrgCore.hpp">
+<area shape="rect" id="node1" title="FrgCore implementation for SU(2) models." alt="" coords="235,5,490,47"/>
+<area shape="rect" id="node2" href="$FrgCoreFactory_8cpp.html" title="Factory function to create a new FrgCore." alt="" coords="5,102,248,143"/>
+<area shape="rect" id="node3" href="$SU2EffectiveAction_8hpp.html" title="Implementation of a flowing effective action for SU(2) models." alt="" coords="323,95,557,151"/>
+<area shape="rect" id="node4" href="$SU2FrgCore_8cpp.html" title="FrgCore implementation for SU(2) models." alt="" coords="170,206,425,247"/>
+<area shape="rect" id="node5" href="$SU2MeasurementCorrelation_8cpp.html" title="Correlation measurement for SU(2) models." alt="" coords="455,199,721,255"/>
+</map>

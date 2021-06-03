@@ -1,0 +1,6 @@
+<map id="XYZEffectiveAction" name="XYZEffectiveAction">
+<area shape="rect" id="node1" title="Implementation of a flowing effective action for models with diagonal interactions." alt="" coords="157,95,304,121"/>
+<area shape="rect" id="node2" href="$structEffectiveAction.html" title="Virtual implementation of a flowing effective action." alt="" coords="5,5,125,32"/>
+<area shape="rect" id="node3" href="$structXYZVertexTwoParticle.html" title="Two&#45;particle vertex implementation for models with diagonal interactions." alt="" coords="149,5,312,32"/>
+<area shape="rect" id="node4" href="$structXYZVertexSingleParticle.html" title="Single&#45;particle vertex implementation for models with diagonal interactions." alt="" coords="336,5,515,32"/>
+</map>

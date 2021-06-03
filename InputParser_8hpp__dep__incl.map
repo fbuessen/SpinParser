@@ -1,0 +1,9 @@
+<map id="/home/runner/work/SpinParser/SpinParser/src/lib/InputParser.hpp" name="/home/runner/work/SpinParser/SpinParser/src/lib/InputParser.hpp">
+<area shape="rect" id="node1" title="Parse input strings to numerical values. Can resolve simple multiplications and sqrt() expressions." alt="" coords="717,5,958,47"/>
+<area shape="rect" id="node2" href="$FrgCoreFactory_8cpp.html" title="Factory function to create a new FrgCore." alt="" coords="5,95,248,136"/>
+<area shape="rect" id="node3" href="$LatticeModelFactory_8cpp.html" title="Create lattice representations from a lattice unit cell and specification of spin interactions." alt="" coords="272,95,549,136"/>
+<area shape="rect" id="node4" href="$SU2FrgCore_8cpp.html" title="FrgCore implementation for SU(2) models." alt="" coords="574,95,829,136"/>
+<area shape="rect" id="node5" href="$TRIFrgCore_8cpp.html" title="FrgCore implementation for time reversal invariant models." alt="" coords="853,95,1097,136"/>
+<area shape="rect" id="node6" href="$TaskFileParser_8cpp.html" title="Task file parser routine." alt="" coords="1121,95,1359,136"/>
+<area shape="rect" id="node7" href="$XYZFrgCore_8cpp.html" title="FrgCore implementation for models with diagonal interactions." alt="" coords="1383,95,1638,136"/>
+</map>

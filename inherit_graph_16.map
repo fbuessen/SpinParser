@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classHMP_1_1LoadManager.html" title="Common load manager interface for both, the MPI server rank and slave ranks." alt="" coords="5,31,153,57"/>
+<area shape="rect" id="node2" href="$classHMP_1_1LoadManagerMaster.html" title="LoadManager master implementation, which is responsible for distributing work and synchronizing data." alt="" coords="201,5,395,32"/>
+<area shape="rect" id="node3" href="$classHMP_1_1LoadManagerSlave.html" title="LoadManager slave implementation, responsible for receiving and executing workload chunks form a Load..." alt="" coords="206,56,390,83"/>
+</map>

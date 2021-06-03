@@ -1,0 +1,22 @@
+<map id="/home/runner/work/SpinParser/SpinParser/src/CommandLineOptions.hpp" name="/home/runner/work/SpinParser/SpinParser/src/CommandLineOptions.hpp">
+<area shape="rect" id="node1" title="Parser for command line arguments." alt="" coords="1234,5,1527,47"/>
+<area shape="rect" id="node2" href="$CommandLineOptions_8cpp.html" title="Parser for command line arguments." alt="" coords="956,95,1248,136"/>
+<area shape="rect" id="node3" href="$SpinParser_8hpp.html" title="Pf&#45;FRG solver implementation." alt="" coords="1272,95,1489,136"/>
+<area shape="rect" id="node20" href="$SpinParser_8cpp.html" title="Pf&#45;FRG solver implementation." alt="" coords="1824,273,2041,315"/>
+<area shape="rect" id="node4" href="$FrgCore_8hpp.html" title="Numerics core for pf&#45;FRG calculations." alt="" coords="1180,184,1397,225"/>
+<area shape="rect" id="node7" href="$TaskFileParser_8cpp.html" title="Task file parser routine." alt="" coords="572,370,811,411"/>
+<area shape="rect" id="node10" href="$SU2FrgCore_8cpp.html" title="FrgCore implementation for SU(2) models." alt="" coords="1271,474,1525,515"/>
+<area shape="rect" id="node11" href="$SU2MeasurementCorrelation_8cpp.html" title="Correlation measurement for SU(2) models." alt="" coords="979,467,1246,523"/>
+<area shape="rect" id="node14" href="$XYZFrgCore_8cpp.html" title="FrgCore implementation for models with diagonal interactions." alt="" coords="1841,474,2096,515"/>
+<area shape="rect" id="node15" href="$XYZMeasurementCorrelation_8cpp.html" title="Correlation measurement for models with diagonal interactions." alt="" coords="1550,467,1817,523"/>
+<area shape="rect" id="node18" href="$TRIFrgCore_8cpp.html" title="FrgCore implementation for time reversal invariant models." alt="" coords="287,474,531,515"/>
+<area shape="rect" id="node19" href="$TRIMeasurementCorrelation_8cpp.html" title="Correlation measurement for time reversal invariant models." alt="" coords="5,467,263,523"/>
+<area shape="rect" id="node5" href="$FrgCoreFactory_8hpp.html" title="Factory function to create a new FrgCore." alt="" coords="835,273,1079,315"/>
+<area shape="rect" id="node8" href="$SU2FrgCore_8hpp.html" title="FrgCore implementation for SU(2) models." alt="" coords="1143,273,1397,315"/>
+<area shape="rect" id="node12" href="$XYZFrgCore_8hpp.html" title="FrgCore implementation for models with diagonal interactions." alt="" coords="1493,273,1748,315"/>
+<area shape="rect" id="node16" href="$TRIFrgCore_8hpp.html" title="FrgCore implementation for time reversal invariant models." alt="" coords="251,273,497,315"/>
+<area shape="rect" id="node6" href="$FrgCoreFactory_8cpp.html" title="Factory function to create a new FrgCore." alt="" coords="835,370,1078,411"/>
+<area shape="rect" id="node9" href="$SU2EffectiveAction_8hpp.html" title="Implementation of a flowing effective action for SU(2) models." alt="" coords="1153,363,1387,419"/>
+<area shape="rect" id="node13" href="$XYZEffectiveAction_8hpp.html" title="Implementation of a flowing effective action for models with diagonal interactions." alt="" coords="1563,363,1798,419"/>
+<area shape="rect" id="node17" href="$TRIEffectiveAction_8hpp.html" title="Implementation of a flowing effective action for time reversal invariant models." alt="" coords="222,363,446,419"/>
+</map>

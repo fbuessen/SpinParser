@@ -1,0 +1,4 @@
+<map id="LatticeModelFactory::SpinInteraction" name="LatticeModelFactory::SpinInteraction">
+<area shape="rect" id="node1" title="Representation of a two&#45;spin interaction." alt="" coords="5,124,159,165"/>
+<area shape="rect" id="node2" href="$structLatticeModelFactory_1_1LatticeSite.html" title="Representation of a Lattice site." alt="" coords="5,5,159,47"/>
+</map>

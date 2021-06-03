@@ -1,0 +1,6 @@
+<map id="EffectiveAction" name="EffectiveAction">
+<area shape="rect" id="node1" title="Virtual implementation of a flowing effective action." alt="" coords="187,5,307,32"/>
+<area shape="rect" id="node2" href="$structSU2EffectiveAction.html" title="Implementation of a flowing effective action for SU(2) models." alt="" coords="5,80,152,107"/>
+<area shape="rect" id="node3" href="$structTRIEffectiveAction.html" title="Implementation of a flowing effective action for time reversal invariant models." alt="" coords="176,80,317,107"/>
+<area shape="rect" id="node4" href="$structXYZEffectiveAction.html" title="Implementation of a flowing effective action for models with diagonal interactions." alt="" coords="341,80,488,107"/>
+</map>

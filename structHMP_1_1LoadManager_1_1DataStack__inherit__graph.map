@@ -1,0 +1,4 @@
+<map id="HMP::LoadManager::DataStack&lt; StackT &gt;" name="HMP::LoadManager::DataStack&lt; StackT &gt;">
+<area shape="rect" id="node1" title="Concrete derivation of DataStackBase, managing an array of fundamental data types (or tuples thereof,..." alt="" coords="21,80,244,121"/>
+<area shape="rect" id="node2" href="$structHMP_1_1LoadManager_1_1DataStackBase.html" title="Abstract base class for DataStack types." alt="" coords="5,5,260,32"/>
+</map>

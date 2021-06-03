@@ -1,0 +1,5 @@
+<map id="Lattice" name="Lattice">
+<area shape="rect" id="node1" title="Representation of a physical lattice, with symmetry information on two&#45;point correlators." alt="" coords="134,124,201,151"/>
+<area shape="rect" id="node2" href="$structLatticeSiteDescriptor.html" title="Structure to specify a symmetry&#45;transformed lattice site." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node3" href="$structLatticeOverlap.html" title="Structure to describe the portion of the lattice that is relevant in terms of the form sum_j v(i1,..." alt="" coords="193,5,310,32"/>
+</map>

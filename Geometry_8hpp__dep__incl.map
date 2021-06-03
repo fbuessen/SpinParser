@@ -1,0 +1,35 @@
+<map id="/home/runner/work/SpinParser/SpinParser/src/lib/Geometry.hpp" name="/home/runner/work/SpinParser/SpinParser/src/lib/Geometry.hpp">
+<area shape="rect" id="node1" title="Implementation of three&#45; and four&#45;dimensional vectors and matrices for geometric operations." alt="" coords="100,5,332,47"/>
+<area shape="rect" id="node2" href="$Lattice_8hpp.html" title="Representation of a physical lattice." alt="" coords="270,95,487,136"/>
+<area shape="rect" id="node33" href="$LatticeModelFactory_8cpp.html" title="Create lattice representations from a lattice unit cell and specification of spin interactions." alt="" coords="5,385,283,426"/>
+<area shape="rect" id="node3" href="$FrgCommon_8hpp.html" title="Hub for central objects in pf&#45;FRG calculations." alt="" coords="2047,184,2275,225"/>
+<area shape="rect" id="node31" href="$SpinModel_8hpp.html" title="Representation of a spin model with two&#45;spin interactions." alt="" coords="343,184,561,225"/>
+<area shape="rect" id="node32" href="$LatticeModelFactory_8hpp.html" title="Create lattice representations from a lattice unit cell and specification of spin interactions." alt="" coords="166,281,445,322"/>
+<area shape="rect" id="node4" href="$FrgCommon_8cpp.html" title="Hub for central objects in pf&#45;FRG calculations." alt="" coords="2249,281,2476,322"/>
+<area shape="rect" id="node5" href="$SpinParser_8hpp.html" title="Pf&#45;FRG solver implementation." alt="" coords="1715,281,1933,322"/>
+<area shape="rect" id="node23" href="$Measurement_8cpp.html" title="Abstract measurement protocol definition for pf&#45;FRG calculations." alt="" coords="2551,281,2790,322"/>
+<area shape="rect" id="node24" href="$SU2VertexSingleParticle_8hpp.html" title="Single&#45;particle vertex implementation for SU(2) models." alt="" coords="459,481,717,537"/>
+<area shape="rect" id="node25" href="$SU2VertexTwoParticle_8hpp.html" title="Two&#45;particle vertex implementation for SU(2) models." alt="" coords="469,273,713,329"/>
+<area shape="rect" id="node26" href="$TRIVertexSingleParticle_8hpp.html" title="Single&#45;particle vertex implementation for time reversal invariant models." alt="" coords="2457,377,2706,433"/>
+<area shape="rect" id="node27" href="$TRIVertexTwoParticle_8hpp.html" title="Two&#45;particle vertex implementation for time reversal invariant models." alt="" coords="2199,377,2433,433"/>
+<area shape="rect" id="node28" href="$XYZVertexSingleParticle_8hpp.html" title="Single&#45;particle vertex implementation for models with diagonal interactions." alt="" coords="2729,377,2988,433"/>
+<area shape="rect" id="node29" href="$XYZVertexTwoParticle_8hpp.html" title="Two&#45;particle vertex implementation for models with diagonal interactions." alt="" coords="3013,377,3257,433"/>
+<area shape="rect" id="node30" href="$Integrator_8hpp.html" title="One&#45;dimensional numerical integration routines." alt="" coords="1749,593,1981,634"/>
+<area shape="rect" id="node6" href="$FrgCore_8hpp.html" title="Numerics core for pf&#45;FRG calculations." alt="" coords="1339,385,1557,426"/>
+<area shape="rect" id="node9" href="$TaskFileParser_8cpp.html" title="Task file parser routine." alt="" coords="711,593,950,634"/>
+<area shape="rect" id="node12" href="$SU2FrgCore_8cpp.html" title="FrgCore implementation for SU(2) models." alt="" coords="673,697,927,738"/>
+<area shape="rect" id="node13" href="$SU2MeasurementCorrelation_8cpp.html" title="Correlation measurement for SU(2) models." alt="" coords="1076,689,1343,745"/>
+<area shape="rect" id="node16" href="$XYZFrgCore_8cpp.html" title="FrgCore implementation for models with diagonal interactions." alt="" coords="2461,697,2715,738"/>
+<area shape="rect" id="node17" href="$XYZMeasurementCorrelation_8cpp.html" title="Correlation measurement for models with diagonal interactions." alt="" coords="2169,689,2436,745"/>
+<area shape="rect" id="node20" href="$TRIFrgCore_8cpp.html" title="FrgCore implementation for time reversal invariant models." alt="" coords="1563,697,1807,738"/>
+<area shape="rect" id="node21" href="$TRIMeasurementCorrelation_8cpp.html" title="Correlation measurement for time reversal invariant models." alt="" coords="1855,689,2113,745"/>
+<area shape="rect" id="node22" href="$SpinParser_8cpp.html" title="Pf&#45;FRG solver implementation." alt="" coords="1390,489,1607,530"/>
+<area shape="rect" id="node7" href="$FrgCoreFactory_8hpp.html" title="Factory function to create a new FrgCore." alt="" coords="1122,489,1366,530"/>
+<area shape="rect" id="node10" href="$SU2FrgCore_8hpp.html" title="FrgCore implementation for SU(2) models." alt="" coords="843,489,1098,530"/>
+<area shape="rect" id="node14" href="$XYZFrgCore_8hpp.html" title="FrgCore implementation for models with diagonal interactions." alt="" coords="2294,489,2549,530"/>
+<area shape="rect" id="node18" href="$TRIFrgCore_8hpp.html" title="FrgCore implementation for time reversal invariant models." alt="" coords="1683,489,1928,530"/>
+<area shape="rect" id="node8" href="$FrgCoreFactory_8cpp.html" title="Factory function to create a new FrgCore." alt="" coords="1200,593,1443,634"/>
+<area shape="rect" id="node11" href="$SU2EffectiveAction_8hpp.html" title="Implementation of a flowing effective action for SU(2) models." alt="" coords="452,585,687,641"/>
+<area shape="rect" id="node15" href="$XYZEffectiveAction_8hpp.html" title="Implementation of a flowing effective action for models with diagonal interactions." alt="" coords="2456,585,2691,641"/>
+<area shape="rect" id="node19" href="$TRIEffectiveAction_8hpp.html" title="Implementation of a flowing effective action for time reversal invariant models." alt="" coords="2005,585,2229,641"/>
+</map>

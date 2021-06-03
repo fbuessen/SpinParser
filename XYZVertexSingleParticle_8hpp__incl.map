@@ -1,0 +1,25 @@
+<map id="/home/runner/work/SpinParser/SpinParser/src/XYZ/XYZVertexSingleParticle.hpp" name="/home/runner/work/SpinParser/SpinParser/src/XYZ/XYZVertexSingleParticle.hpp">
+<area shape="rect" id="node1" title="Single&#45;particle vertex implementation for models with diagonal interactions." alt="" coords="291,5,549,61"/>
+<area shape="rect" id="node2" title=" " alt="" coords="259,109,331,136"/>
+<area shape="rect" id="node3" href="$Assert_8hpp.html" title="Lightweight macro library for assertions." alt="" coords="471,259,582,285"/>
+<area shape="rect" id="node8" href="$FrgCommon_8hpp.html" title="Hub for central objects in pf&#45;FRG calculations." alt="" coords="355,109,485,136"/>
+<area shape="rect" id="node4" href="$Exception_8hpp.html" title="Descriptor object for exceptions." alt="" coords="459,333,594,360"/>
+<area shape="rect" id="node5" title=" " alt="" coords="407,408,465,435"/>
+<area shape="rect" id="node6" title=" " alt="" coords="489,408,564,435"/>
+<area shape="rect" id="node7" title=" " alt="" coords="589,408,675,435"/>
+<area shape="rect" id="node9" href="$FrequencyDiscretization_8hpp.html" title="Discretization of Matsubara frequency space." alt="" coords="573,184,779,211"/>
+<area shape="rect" id="node17" href="$CutoffDiscretization_8hpp.html" title="Representation of a discretized frequency cutoff axis." alt="" coords="319,184,497,211"/>
+<area shape="rect" id="node18" href="$Lattice_8hpp.html" title="Representation of a physical lattice." alt="" coords="199,184,294,211"/>
+<area shape="rect" id="node10" title=" " alt="" coords="385,259,447,285"/>
+<area shape="rect" id="node11" title=" " alt="" coords="865,259,951,285"/>
+<area shape="rect" id="node12" title=" " alt="" coords="658,259,723,285"/>
+<area shape="rect" id="node13" href="$Log_8hpp.html" title="Lightweight logging interface with output filtering." alt="" coords="748,259,841,285"/>
+<area shape="rect" id="node14" title=" " alt="" coords="647,333,727,360"/>
+<area shape="rect" id="node15" title=" " alt="" coords="751,333,838,360"/>
+<area shape="rect" id="node16" title=" " alt="" coords="862,333,1018,360"/>
+<area shape="rect" id="node19" title=" " alt="" coords="173,259,229,285"/>
+<area shape="rect" id="node20" title=" " alt="" coords="254,259,309,285"/>
+<area shape="rect" id="node21" href="$Geometry_8hpp.html" title="Implementation of three&#45; and four&#45;dimensional vectors and matrices for geometric operations." alt="" coords="16,259,149,285"/>
+<area shape="rect" id="node22" title=" " alt="" coords="5,333,72,360"/>
+<area shape="rect" id="node23" title=" " alt="" coords="97,333,159,360"/>
+</map>

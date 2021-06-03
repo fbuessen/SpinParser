@@ -1,0 +1,10 @@
+<map id="SpinParser" name="SpinParser">
+<area shape="rect" id="node1" title="Principal object and interface for the solution of pf&#45;FRG flow equations." alt="" coords="347,199,438,225"/>
+<area shape="rect" id="node2" href="$classHMP_1_1LoadManager.html" title="Common load manager interface for both, the MPI server rank and slave ranks." alt="" coords="5,109,153,136"/>
+<area shape="rect" id="node3" href="$classFrgCore.html" title="Virtual implementation of a pf&#45;FRG numerics core." alt="" coords="178,109,250,136"/>
+<area shape="rect" id="node4" href="$structEffectiveAction.html" title="Virtual implementation of a flowing effective action." alt="" coords="154,5,274,32"/>
+<area shape="rect" id="node5" href="$classTaskFileParser.html" title="Task file parser routine. The object is bound to a single task file, which it initially reads and par..." alt="" coords="274,109,389,136"/>
+<area shape="rect" id="node6" href="$structFileset.html" title=" " alt="" coords="423,109,488,136"/>
+<area shape="rect" id="node7" href="$structComputationStatus.html" title="Computation status descriptor." alt="" coords="513,109,659,136"/>
+<area shape="rect" id="node8" href="$classCommandLineOptions.html" title="Parser object, which can be fed with argc/argv information and which then holds the parsed values in ..." alt="" coords="684,109,851,136"/>
+</map>

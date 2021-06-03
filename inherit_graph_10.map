@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classFrgCore.html" title="Virtual implementation of a pf&#45;FRG numerics core." alt="" coords="5,56,77,83"/>
+<area shape="rect" id="node2" href="$classSU2FrgCore.html" title="FrgCore implementation for SU(2) models." alt="" coords="125,5,224,32"/>
+<area shape="rect" id="node3" href="$classTRIFrgCore.html" title="FrgCore implementation for time reversal invariant models." alt="" coords="128,56,221,83"/>
+<area shape="rect" id="node4" href="$classXYZFrgCore.html" title="FrgCore implementation for models with diagonal interactions." alt="" coords="125,107,224,133"/>
+</map>

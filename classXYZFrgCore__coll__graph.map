@@ -1,0 +1,5 @@
+<map id="XYZFrgCore" name="XYZFrgCore">
+<area shape="rect" id="node1" title="FrgCore implementation for models with diagonal interactions." alt="" coords="16,185,115,212"/>
+<area shape="rect" id="node2" href="$classFrgCore.html" title="Virtual implementation of a pf&#45;FRG numerics core." alt="" coords="29,109,101,136"/>
+<area shape="rect" id="node3" href="$structEffectiveAction.html" title="Virtual implementation of a flowing effective action." alt="" coords="5,5,125,32"/>
+</map>

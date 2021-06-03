@@ -1,0 +1,7 @@
+<map id="/home/runner/work/SpinParser/SpinParser/src/TRI/TRIFrgCore.hpp" name="/home/runner/work/SpinParser/SpinParser/src/TRI/TRIFrgCore.hpp">
+<area shape="rect" id="node1" title="FrgCore implementation for time reversal invariant models." alt="" coords="237,5,483,47"/>
+<area shape="rect" id="node2" href="$FrgCoreFactory_8cpp.html" title="Factory function to create a new FrgCore." alt="" coords="5,102,248,143"/>
+<area shape="rect" id="node3" href="$TRIEffectiveAction_8hpp.html" title="Implementation of a flowing effective action for time reversal invariant models." alt="" coords="323,95,547,151"/>
+<area shape="rect" id="node4" href="$TRIFrgCore_8cpp.html" title="FrgCore implementation for time reversal invariant models." alt="" coords="169,206,413,247"/>
+<area shape="rect" id="node5" href="$TRIMeasurementCorrelation_8cpp.html" title="Correlation measurement for time reversal invariant models." alt="" coords="449,199,706,255"/>
+</map>

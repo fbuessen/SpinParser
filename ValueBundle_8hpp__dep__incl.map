@@ -1,0 +1,15 @@
+<map id="/home/runner/work/SpinParser/SpinParser/src/lib/ValueBundle.hpp" name="/home/runner/work/SpinParser/SpinParser/src/lib/ValueBundle.hpp">
+<area shape="rect" id="node1" title="Lightweight library for value arrays and collections thereof." alt="" coords="770,5,1021,47"/>
+<area shape="rect" id="node2" href="$SU2VertexTwoParticle_8hpp.html" title="Two&#45;particle vertex implementation for SU(2) models." alt="" coords="317,95,561,151"/>
+<area shape="rect" id="node5" href="$SU2MeasurementCorrelation_8cpp.html" title="Correlation measurement for SU(2) models." alt="" coords="285,303,551,359"/>
+<area shape="rect" id="node6" href="$TRIVertexTwoParticle_8hpp.html" title="Two&#45;particle vertex implementation for time reversal invariant models." alt="" coords="701,95,935,151"/>
+<area shape="rect" id="node9" href="$TRIMeasurementCorrelation_8cpp.html" title="Correlation measurement for time reversal invariant models." alt="" coords="844,303,1101,359"/>
+<area shape="rect" id="node10" href="$XYZVertexTwoParticle_8hpp.html" title="Two&#45;particle vertex implementation for models with diagonal interactions." alt="" coords="1099,95,1343,151"/>
+<area shape="rect" id="node13" href="$XYZMeasurementCorrelation_8cpp.html" title="Correlation measurement for models with diagonal interactions." alt="" coords="1405,303,1671,359"/>
+<area shape="rect" id="node3" href="$SU2EffectiveAction_8hpp.html" title="Implementation of a flowing effective action for SU(2) models." alt="" coords="301,199,535,255"/>
+<area shape="rect" id="node4" href="$SU2FrgCore_8cpp.html" title="FrgCore implementation for SU(2) models." alt="" coords="5,310,260,351"/>
+<area shape="rect" id="node7" href="$TRIEffectiveAction_8hpp.html" title="Implementation of a flowing effective action for time reversal invariant models." alt="" coords="706,199,930,255"/>
+<area shape="rect" id="node8" href="$TRIFrgCore_8cpp.html" title="FrgCore implementation for time reversal invariant models." alt="" coords="576,310,820,351"/>
+<area shape="rect" id="node11" href="$XYZEffectiveAction_8hpp.html" title="Implementation of a flowing effective action for models with diagonal interactions." alt="" coords="1135,199,1370,255"/>
+<area shape="rect" id="node12" href="$XYZFrgCore_8cpp.html" title="FrgCore implementation for models with diagonal interactions." alt="" coords="1125,310,1380,351"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$structHMP_1_1LoadManager_1_1DataStackBase.html" title="Abstract base class for DataStack types." alt="" coords="5,13,260,39"/>
+<area shape="rect" id="node2" href="$structHMP_1_1LoadManager_1_1DataStack.html" title="Concrete derivation of DataStackBase, managing an array of fundamental data types (or tuples thereof,..." alt="" coords="308,5,531,47"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="/home/runner/work/SpinParser/SpinParser/src/TRI/TRIVertexSingleParticle.hpp" name="/home/runner/work/SpinParser/SpinParser/src/TRI/TRIVertexSingleParticle.hpp">
+<area shape="rect" id="node1" title="Single&#45;particle vertex implementation for time reversal invariant models." alt="" coords="140,5,389,61"/>
+<area shape="rect" id="node2" href="$TRIEffectiveAction_8hpp.html" title="Implementation of a flowing effective action for time reversal invariant models." alt="" coords="153,109,377,165"/>
+<area shape="rect" id="node3" href="$TRIFrgCore_8cpp.html" title="FrgCore implementation for time reversal invariant models." alt="" coords="5,221,249,262"/>
+<area shape="rect" id="node4" href="$TRIMeasurementCorrelation_8cpp.html" title="Correlation measurement for time reversal invariant models." alt="" coords="273,213,531,269"/>
+</map>
