@@ -1,4 +1,4 @@
-![](https://github.com/fbuessen/SpinParser/actions/workflows/build.yml/badge.svg)
+[![](https://github.com/fbuessen/SpinParser/actions/workflows/build.yml/badge.svg)](https://github.com/fbuessen/SpinParser/actions/workflows/build.yml)
 
 # SpinParser
 
@@ -306,7 +306,7 @@ The argument `interactions=0` specifies that only spin-spin interactions that in
 
 The plot shows lattice sites in two blue and yellow. 
 The yellow lattice sites mark the effective, symmetry-reduced set of sites which is actually being used in the numerical calculation. 
-One can tell from the output that only approximately 1/8 of all lattice sites has been used which leads to a huge speed improvement, since the numerical complexity scales with the square of the numer of lattice sites. 
+One can tell from the output that only approximately 1/8 of all lattice sites has been used which leads to a huge speed improvement, since the numerical complexity scales with the square of the number of lattice sites. 
 
 Two-spin interactions are represented by an arrow which points from lattice site S1 to site S2, and is labeled by a 3*3 interaction matrix M, which displays the coupling S1.M.S2. 
 We can tell that only diagonal entries are non-zero and of equal strength, which confirms that the Heisenberg-like interactions are defined correctly, and that all nearest neighbors are properly included. 
@@ -363,6 +363,129 @@ Every dataset is performed at the cutoff value as specified in the attribute `/S
 
 The data is now ready to be extracted and analyzed. 
 While the contents of the output files can be read directly from the HDF5 format, SpinParser includes a convenient Python library to import results. 
+
+For the example at hand, the square lattice antiferromagnet, we of course know that the resulting ground state should be antiferromagnetically ordered. 
+But let us pretend that we do not have any prior knowledge and perform a systematic analysis. 
+
+We would start by investigating the structure factor at a cutoff value where we would not expect the system to have transitioned into the low-temperature phase, e.g. at <img src="doc/assets/equation_8.png" style="vertical-align:-1pt">, which is twice the intrinsic coupling constant. 
+We plot the structure factor with the following Python code: 
+```python
+import spinparser.obs as o
+import numpy as np
+import matplotlib.pyplot as plt
+
+# set up the Brillouin zone discretization
+discretization = np.linspace(-np.pi, np.pi, 20)
+k=np.array([[x,y,0.0] for x in discretization for y in discretization])
+
+# import pf-FRG data
+data=o.getStructureFactor(file, k, cutoff=0.5, verbose=False)
+data=data.reshape((len(discretization),len(discretization)))
+
+# plot structure factor
+plt.imshow(data, extent=(-np.pi,np.pi,-np.pi,np.pi), vmin=0.0)
+plt.xticks([-np.pi,0,np.pi],[r"$-\pi$","0",r"$\pi$"])
+plt.yticks([-np.pi,0,np.pi],[r"$-\pi$","0",r"$\pi$"])
+plt.colorbar()
+plt.show()
+```
+
+The resulting structure factor, already at this large cutoff, appears to indicate a preference for the <img src="doc/assets/equation_9.png" style="vertical-align:-4pt"> ordering vector, which is associated with antiferromagnetic Néel order. 
+<p align="center"><img src="doc/assets/img_2.png"></p>
+
+Next, we should investigate whether the system undergoes an actual magnetic ordering transition, or whether the magnetic moments remain fluctuating (despite showing a weak preference for antiferromagnetic correlations). 
+
+For this purpose, we study the flow of the antiferromagnetic correlations as a function of the RG cutoff. Again, the data can be conveniently obtained in a few lines of Python code: 
+```python
+import spinparser.obs as o
+import numpy as np
+import matplotlib.pyplot as plt
+
+# read structure factor at k=(0,0) and k=(pi,pi)
+data=o.getStructureFactor(file, [[0,0,0],[-np.pi, np.pi,0.0]], cutoff="all")
+
+# plot structure factor flow
+plt.plot(data["cutoff"], data["data"])
+plt.xlim(0.0, 2.0)
+plt.ylim(0.0, 12.0)
+plt.xlabel(r"cutoff $\Lambda$")
+plt.ylabel(r"correlation $\chi(k)$")
+plt.legend([r"$k=(0,0)$",r"$k=(\pi,\pi)$"])
+plt.show()
+```
+<p align="center"><img src="doc/assets/img_3.png"></p>
+
+The correlations at <img src="doc/assets/equation_9.png" style="vertical-align:-4pt"> clearly become dominant! The correlations continuously increase until, below a cutoff of approximately 0.45, the smooth flow breaks down and exhibits unphysical oscillations. 
+This breakdown indicates that the system undergoes spontaneous symmetry breaking, which we associate with the onset of magnetic order. 
+Since the ordering vector associated with antiferromagnetic order is dominant, we conclude that the magnetically ordered ground state is of Néel type. 
+
+We can now revisit the full structure factor at a cutoff value just above the breakdown point (we should not plot it at zero cutoff, since the calculation becomes unphysical below the breakdown). 
+
+```python
+import spinparser.obs as o
+import numpy as np
+import matplotlib.pyplot as plt
+
+# set up the Brillouin zone discretization
+discretization = np.linspace(-np.pi, np.pi, 20)
+k=np.array([[x,y,0.0] for x in discretization for y in discretization])
+
+# import pf-FRG data
+data=o.getStructureFactor(file, k, cutoff=0.45, verbose=False)
+data=data.reshape((len(discretization),len(discretization)))
+
+# plot structure factor
+plt.imshow(data, extent=(-np.pi,np.pi,-np.pi,np.pi), vmin=0.0)
+plt.xticks([-np.pi,0,np.pi],[r"$-\pi$","0",r"$\pi$"])
+plt.yticks([-np.pi,0,np.pi],[r"$-\pi$","0",r"$\pi$"])
+plt.colorbar()
+plt.show()
+```
+<p align="center"><img src="doc/assets/img_4.png"></p>
+
+We now see that the peaks around the Brillouin zone corners have become much sharper, as expected for magnetic long-range order. Note however, that since we are plotting the structure factor at a cutoff value just above the transition point, the peaks still have some finite width. 
+
+Similarly, we can inspect the real space correlations and confirm that neighboring sites are indeed correlated antiferromagnetically. 
+We plot the correlations with the following example code: 
+```python
+import spinparser.obs as o
+import numpy as np
+import matplotlib.pyplot as plt
+
+# import the real-space correlations
+data=o.getCorrelation(file, site="all", cutoff=0.45)
+site=data["site"]
+
+# plot lattice
+for s1 in data["site"]:
+    for s2 in data["site"]:
+        if np.linalg.norm([s1[0]-s2[0], s1[1]-s2[1]]) <= 1.01:
+            plt.plot([s1[0], s2[0]], [s1[1], s2[1]], 'gray')
+
+# plot correlations
+x = [s[0] for s in data["site"]]
+y = [s[1] for s in data["site"]]
+c = ['blue' if c >= 0.0 else 'red' for c in data["data"].flatten()]
+c[0] = 'gray' #mark reference site
+s = [300.0 * abs(c) for c in data["data"].flatten()]
+plt.scatter(x, y, c=c, s=s, zorder=10)
+plt.gca().set_aspect(1)
+plt.axis('off')
+plt.show()
+```
+<p align="center"><img src="doc/assets/img_5.png"></p>
+
+In this plot, we confirm that the correlations with the reference site (gray) are of antiferromagnetic type. 
+There is a staggered pattern of positive (blue) and negative (red) correlation across the lattice. 
+Furthermore, we see a decay of correlations (size of circles) with distance. 
+Again, it is important to keep in mind that we are plotting the result at a cutoff value just before the magnetic ordering transition, so the decay with spatial distance is expected to more rapid than in the ordered phase. 
+
+Our finding that the square lattice Heisenberg antiferromagnet exhibits Néel order in the ground state is, of course, not surprising (given the the pf-FRG flow equations are formally solved at zero temperature, so the Mermin-Wagner theorem is not violated). 
+
+Yet, this simple example demonstrated how the SpinParser and the accompanying Python tools for data analysis can be used to study general quantum lattice spin models. 
+The general workflow, which we illustrated here, can be straightforwardly extended to more intricate spin models with more subtle magnetic ordering tendencies or, in the absence of a flow breakdown, quantum spin liquid ground states. 
+Such models are likely to require a finer frequency discretization, finer cutoff integration, and/or larger lattice size to give converged results. 
+
 
 ## Developer documentation
 
