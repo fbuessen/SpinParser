@@ -292,7 +292,7 @@ Alternatively, the resource search path can be set manually by specifying the `-
 The model definition comprises a list two-spin interactions. All interactions for one lattice unit cell need to be specified, the rest is inferred by periodicity of the lattice. 
 The interaction is between two lattice sites `from` and `to`, each referenced by a tuple (a1,a2,a3,b), corresponding to the lattice site in unit cell (a1,a2,a3) (in units of the lattice vectors) and basis site ID b. 
 The two-spin interaction type in this example is a Heisenberg interaction. 
-Any interaction can be specified explicitly by replacing `heisenberg` with `xy` which would correspond to the two-spin interaction <img src="doc/assets/equation_6.png" style="vertical-align:-4pt">. 
+Interactions can also be specified more fine-grained by replacing `heisenberg` e.g. with `xy`, which would correspond to the two-spin interaction <img src="doc/assets/equation_6.png" style="vertical-align:-4pt">. 
 The `parameter` name is referenced in the task file to assign a numerical value to the coupling. 
 In our example above, in the line `<j>1.0</j>`, it is set to 1.0, with the sign convention such that the interaction is antiferromagnetic. 
 
@@ -394,7 +394,7 @@ discretization = np.linspace(-np.pi, np.pi, 20)
 k=np.array([[x,y,0.0] for x in discretization for y in discretization])
 
 # import pf-FRG data
-data=o.getStructureFactor(file, k, cutoff=0.5, verbose=False)
+data=o.getStructureFactor("install/examples/squarelattice-AFM.obs", k, cutoff=2.0, verbose=False)
 data=data.reshape((len(discretization),len(discretization)))
 
 # plot structure factor
@@ -417,7 +417,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # read structure factor at k=(0,0) and k=(pi,pi)
-data=o.getStructureFactor(file, [[0,0,0],[-np.pi, np.pi,0.0]], cutoff="all")
+data=o.getStructureFactor("install/examples/squarelattice-AFM.obs", [[0,0,0],[-np.pi, np.pi,0.0]], cutoff="all")
 
 # plot structure factor flow
 plt.plot(data["cutoff"], data["data"])
@@ -446,7 +446,7 @@ discretization = np.linspace(-np.pi, np.pi, 20)
 k=np.array([[x,y,0.0] for x in discretization for y in discretization])
 
 # import pf-FRG data
-data=o.getStructureFactor(file, k, cutoff=0.45, verbose=False)
+data=o.getStructureFactor("install/examples/squarelattice-AFM.obs", k, cutoff=0.45, verbose=False)
 data=data.reshape((len(discretization),len(discretization)))
 
 # plot structure factor
@@ -468,7 +468,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # import the real-space correlations
-data=o.getCorrelation(file, site="all", cutoff=0.45)
+data=o.getCorrelation("install/examples/squarelattice-AFM.obs", site="all", cutoff=0.45)
 site=data["site"]
 
 # plot lattice
