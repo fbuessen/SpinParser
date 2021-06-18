@@ -55,7 +55,6 @@ CommandLineOptions::CommandLineOptions(int argc, char **argv)
 	else
 	{
 		if (boost::filesystem::is_directory(boost::filesystem::path(argv[0]).remove_filename().parent_path().append("res").string())) _resourcePath = boost::filesystem::path(argv[0]).remove_filename().parent_path().append("res").string();
-		else if (boost::filesystem::is_directory(boost::filesystem::path(argv[0]).remove_filename().parent_path().parent_path().append("res").string())) _resourcePath = boost::filesystem::path(argv[0]).remove_filename().parent_path().parent_path().append("res").string();
 		else _resourcePath = boost::filesystem::path(argv[0]).remove_filename().string();
 	}
 
