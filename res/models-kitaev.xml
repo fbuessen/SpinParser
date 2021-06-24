@@ -1,4 +1,5 @@
 <model name="honeycomb-kitaev">
+	<!-- Heisenberg-Kitaev model on the honeycomb lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,-1,0,1" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="-1,0,0,1" type="heisenberg" />
@@ -8,6 +9,7 @@
 </model>
 
 <model name="honeycomb-kitaev-gamma">
+	<!-- Heisenberg-Kitaev-Gamma model on the honeycomb lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,-1,0,1" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="-1,0,0,1" type="heisenberg" />
@@ -20,6 +22,7 @@
 </model>
 
 <model name="hyperhoneycomb-kitaev">
+	<!-- Heisenberg-Kitaev model on the hyperhoneycomb lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,3" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="1,0,0,3" type="heisenberg" />
@@ -35,6 +38,7 @@
 </model>
 
 <model name="hyperhoneycomb-kitaev-gamma">
+	<!-- Heisenberg-Kitaev-Gamma model on the hyperhoneycomb lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,3" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="1,0,0,3" type="heisenberg" />

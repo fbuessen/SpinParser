@@ -1,9 +1,11 @@
 <model name="square-heisenberg">
+	<!-- Heisenberg model on the square lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="1,0,0,0" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,1,0,0" type="heisenberg" />
 </model>
 
 <model name="square-j1j2heisenberg">
+	<!-- J1-J2-Heisenberg model on the square lattice -->
 	<interaction parameter="j1" from="0,0,0,0" to="1,0,0,0" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="0,1,0,0" type="heisenberg" />
 	<interaction parameter="j2" from="0,0,0,0" to="1,1,0,0" type="heisenberg" />
@@ -11,6 +13,7 @@
 </model>
 
 <model name="square-xxz">
+	<!-- XXZ model on the square lattice -->
 	<interaction parameter="jx" from="0,0,0,0" to="1,0,0,0" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="0,1,0,0" type="xxyy" />
 	<interaction parameter="jz" from="0,0,0,0" to="1,0,0,0" type="zz" />
@@ -18,12 +21,14 @@
 </model>
 
 <model name="triangular-heisenberg">
+	<!-- Heisenberg model on the triangular lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="1,0,0,0" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,1,0,0" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="-1,1,0,0" type="heisenberg" />
 </model>
 
 <model name="triangular-j1j2heisenberg">
+	<!-- J1-J2-Heisenberg model on the triangular lattice -->
 	<interaction parameter="j1" from="0,0,0,0" to="1,0,0,0" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="0,1,0,0" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="-1,1,0,0" type="heisenberg" />
@@ -33,6 +38,7 @@
 </model>
 
 <model name="triangular-xxz">
+	<!-- XXZ model on the triangular lattice -->
 	<interaction parameter="jx" from="0,0,0,0" to="1,0,0,0" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="0,1,0,0" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="-1,1,0,0" type="xxyy" />
@@ -42,12 +48,14 @@
 </model>
 
 <model name="honeycomb-heisenberg">
+	<!-- Heisenberg model on the honeycomb lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,-1,0,1" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="-1,0,0,1" type="heisenberg" />
 </model>
 
 <model name="honeycomb-j1j2heisenberg">
+	<!-- J1-J2-Heisenberg model on the honeycomb lattice -->
 	<interaction parameter="j1" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="0,-1,0,1" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="-1,0,0,1" type="heisenberg" />
@@ -60,6 +68,7 @@
 </model>
 
 <model name="honeycomb-xxz">
+	<!-- XXZ model on the honeycomb lattice -->
 	<interaction parameter="jx" from="0,0,0,0" to="0,0,0,1" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="0,-1,0,1" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="-1,0,0,1" type="xxyy" />
@@ -69,6 +78,7 @@
 </model>
 
 <model name="kagome-heisenberg">
+	<!-- Heisenberg model on the kagome lattice -->
 	<interaction parameter="j" from="0,0,0,1" to="0,0,0,0" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
 	<interaction parameter="j" from="-1,0,0,1" to="0,0,0,0" type="heisenberg" />
@@ -78,6 +88,7 @@
 </model>
 
 <model name="kagome-j1j2heisenberg">
+	<!-- J1-J2-Heisenberg model on the kagome lattice -->
 	<interaction parameter="j1" from="0,0,0,1" to="0,0,0,0" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
 	<interaction parameter="j1" from="-1,0,0,1" to="0,0,0,0" type="heisenberg" />
@@ -93,6 +104,7 @@
 </model>
 
 <model name="kagome-xxz">
+	<!-- XXZ model on the kagome lattice -->
 	<interaction parameter="jx" from="0,0,0,1" to="0,0,0,0" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="0,0,0,2" type="xxyy" />
 	<interaction parameter="jx" from="-1,0,0,1" to="0,0,0,0" type="xxyy" />
@@ -108,12 +120,14 @@
 </model>
 
 <model name="cubic-heisenberg">
+	<!-- Heisenberg model on the cubic lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="1,0,0,0" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,1,0,0" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,0,1,0" type="heisenberg" />
 </model>
 
 <model name="cubic-j1j2heisenberg">
+	<!-- J1-J2-Heisenberg model on the cubic lattice -->
 	<interaction parameter="j1" from="0,0,0,0" to="1,0,0,0" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="0,1,0,0" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="0,0,1,0" type="heisenberg" />
@@ -126,6 +140,7 @@
 </model>
 
 <model name="cubic-xxz">
+	<!-- XXZ model on the cubic lattice -->
 	<interaction parameter="jx" from="0,0,0,0" to="1,0,0,0" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="0,1,0,0" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="0,0,1,0" type="xxyy" />
@@ -135,6 +150,7 @@
 </model>
 
 <model name="fcc-heisenberg">
+	<!-- Heisenberg model on the fcc lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="0,0,1,0" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,1,-1,0" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,1,0,0" type="heisenberg" />
@@ -144,6 +160,7 @@
 </model>
 
 <model name="fcc-j1j2heisenberg">
+	<!-- J1-J2-Heisenberg model on the fcc lattice -->
 	<interaction parameter="j1" from="0,0,0,0" to="0,0,1,0" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="0,1,-1,0" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="0,1,0,0" type="heisenberg" />
@@ -156,6 +173,7 @@
 </model>
 
 <model name="fcc-xxz">
+	<!-- XXZ model on the fcc lattice -->
 	<interaction parameter="jx" from="0,0,0,0" to="0,0,1,0" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="0,1,-1,0" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="0,1,0,0" type="xxyy" />
@@ -171,6 +189,7 @@
 </model>
 
 <model name="diamond-heisenberg">
+	<!-- Heisenberg model on the diamond lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,1" to="0,0,1,0" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,1" to="0,1,0,0" type="heisenberg" />
@@ -178,6 +197,7 @@
 </model>
 
 <model name="diamond-j1j2heisenberg">
+	<!-- J1-J2-Heisenberg model on the diamond lattice -->
 	<interaction parameter="j1" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,1" to="0,0,1,0" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,1" to="0,1,0,0" type="heisenberg" />
@@ -191,6 +211,7 @@
 </model>
 
 <model name="diamond-xxz">
+	<!-- XXZ model on the diamond lattice -->
 	<interaction parameter="jx" from="0,0,0,0" to="0,0,0,1" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,1" to="0,0,1,0" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,1" to="0,1,0,0" type="xxyy" />
@@ -202,6 +223,7 @@
 </model>
 
 <model name="hyperoctagon-heisenberg">
+	<!-- Heisenberg model on the hyperoctagon lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,1" to="0,0,0,2" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,1" to="0,0,0,3" type="heisenberg" />
@@ -211,6 +233,7 @@
 </model>
 
 <model name="hyperoctagon-j1j2heisenberg">
+	<!-- J1-J2-Heisenberg model on the hyperoctagon lattice -->
 	<interaction parameter="j1" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,1" to="0,0,0,2" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,1" to="0,0,0,3" type="heisenberg" />
@@ -232,6 +255,7 @@
 </model>
 
 <model name="hyperoctagon-xxz">
+	<!-- XXZ model on the hyperoctagon lattice -->
 	<interaction parameter="jx" from="0,0,0,0" to="0,0,0,2" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,1" to="0,0,0,2" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,1" to="0,0,0,3" type="xxyy" />
@@ -247,6 +271,7 @@
 </model>
 
 <model name="hyperkagome-heisenberg">
+	<!-- Heisenberg model on the hyperkagome lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="1,-1,0,10" type="heisenberg" />
@@ -274,6 +299,7 @@
 </model>
 
 <model name="hyperkagome-j1j2heisenberg">
+	<!-- J1-J2-Heisenberg model on the hyperkagome lattice -->
 	<interaction parameter="j1" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="1,-1,0,10" type="heisenberg" />
@@ -337,6 +363,7 @@
 </model>
 
 <model name="hyperkagome-xxz">
+	<!-- XXZ model on the hyperkagome lattice -->
 	<interaction parameter="jx" from="0,0,0,0" to="0,0,0,1" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="0,0,0,2" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="1,-1,0,10" type="xxyy" />
@@ -388,6 +415,7 @@
 </model>
 
 <model name="hyperhoneycomb-heisenberg">
+	<!-- Heisenberg model on the hyperhoneycomb lattice -->
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="1,0,-1,3" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,1" to="0,0,0,2" type="heisenberg" />
@@ -397,6 +425,7 @@
 </model>
 
 <model name="hyperhoneycomb-j1j2heisenberg">
+	<!-- J1-J2-Heisenberg model on the hyperhoneycomb lattice -->
 	<interaction parameter="j1" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,0" to="1,0,-1,3" type="heisenberg" />
 	<interaction parameter="j1" from="0,0,0,1" to="0,0,0,2" type="heisenberg" />
@@ -426,6 +455,7 @@
 </model>
 
 <model name="hyperhoneycomb-xxz">
+	<!-- XXZ model on the hyperhoneycomb lattice -->
 	<interaction parameter="jx" from="0,0,0,0" to="0,0,0,2" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,0" to="1,0,-1,3" type="xxyy" />
 	<interaction parameter="jx" from="0,0,0,1" to="0,0,0,2" type="xxyy" />
