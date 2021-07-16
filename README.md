@@ -2,7 +2,7 @@
 
 # SpinParser
 
-SpinParser ("Spin Pseudofermion Algorithms for Research on Spin Ensembles via Renormalization") is a software platform to perform pseudofermion functional renormalization group (pf-FRG) calculations to solve lattice spin models in quantum magnetism. 
+SpinParser ("Spin Pseudofermion Algorithms for Research on Spin Ensembles via Renormalization") is a software platform to perform pseudofermion functional renormalization group (pf-FRG) calculations to solve lattice spin models of quantum magnetism. 
 
 The pf-FRG algorithm has first been proposed in [[Reuther and Wölfle (2010)](http://dx.doi.org/10.1103/PhysRevB.81.144410)] for Heisenberg models on two-dimensional lattices geometries. 
 
@@ -37,18 +37,18 @@ The SpinParser provides a built-in abstraction layer to identify symmetries in t
 The numerical core for the solution of the flow equations themselves is designed to run on massively parallel high-performance computing platforms. 
 It utilizes a hybrid OpenMP/MPI parallelization scheme to make efficient use of individual shared-memory computing nodes, while still allowing to scale across multiple computing nodes. 
 
-Due to the algebraic nature of the flow equations, being a large set of coupled integro-differential equations, the computation time for individual contributions to the flow equations can vary. 
+Due to the algebraic nature of the flow equations (being a large set of coupled integro-differential equations) the computation time for individual contributions to the flow equations can vary. 
 To mitigate the impact, SpinParser performs dynamic load balancing across the different computing nodes. 
 It is thus in principle also possible to efficiently run the code on heterogeneous computing platforms. 
 
-This software contains three different numerical cores which are optimized for different classes of spin models: 
-- A numerical core for spin-1/2 SU(2)-symmetric spin models with an extension for spin-S SU(2) models as put forward in [[Baez and Reuther (2017)](http://dx.doi.org/10.1103/PhysRevB.96.045144), [Buessen et al. (2018)](http://dx.doi.org/10.1103/PhysRevB.97.064415)]
+This software contains three different numerical cores, which are optimized for different classes of spin models: 
+- A numerical core for spin-1/2 SU(2)-symmetric spin models with an extension for spin-S SU(2) models as put forward in [[Baez and Reuther (2017)](http://dx.doi.org/10.1103/PhysRevB.96.045144)]
 - A numerical core for Kitaev-like spin-1/2 models with diagonal interactions as put forward in [[Reuther et al. (2011)](http://dx.doi.org/10.1103/PhysRevB.84.100406)]
 - A numerical core for general spin-1/2 models which may include off-diagonal two-spin interactions as put forward in [[Buessen et al. (2019)](http://dx.doi.org/10.1103/PhysRevB.100.125164)]
 
 ## Installation
 
-SpinParser needs to be built from source. The build process uses the [cmake](https://cmake.org) build system. 
+SpinParser needs to be built from source. The build process makes use of the [cmake](https://cmake.org) build system. 
 SpinParser is relatively easy to compile and only depends on a few libraries. 
 The build process is described in a step-by-step guide below, exemplified for Ubuntu 20.04 LTS. 
 
@@ -61,30 +61,31 @@ You need to ensure that the following software and libraries are installed on th
 * MPI (optional, recommended)
 * Doxygen (optional, required for generating documentation files)
 
-Furthermore, in order for the tests to be evaluated correctly, a Python installation is required with the following libraries available:
+Furthermore, in order for the optional python tools to work and tests to be evaluated correctly, a Python installation is required with the following libraries available:
 * numpy
 * h5py
+* matplotlib
 
 To ensure that all these libraries are installed, invoke the following OS specific commands in your terminal. (You might want to drop the `python` part if you already have a Python installation.)
 
 *Linux:*
 
 ```bash
-sudo apt install cmake libboost-all-dev libhdf5-dev libopenmpi-dev doxygen graphviz python
+sudo apt install git cmake libboost-all-dev libhdf5-dev libopenmpi-dev doxygen graphviz python-is-python3 python3-pip
 ```
 
 ```bash
-python -m pip install numpy h5py
+python3 -m pip install numpy h5py matplotlib
 ```
 
 *MacOS (via Homebrew):*
 
 ```bash
-brew install cmake hdf5 boost doxygen graphviz libomp python
+brew install git cmake hdf5 boost doxygen graphviz libomp python
 ```
 
 ```bash
-python -m pip install numpy h5py
+python -m pip install numpy h5py matplotlib
 ```
 
 The SpinParser might also successfully build with older library versions. 
@@ -94,35 +95,35 @@ Especially when tests are disabled (see below), older versions of boost are also
 
 Create and enter a working directory, say 
 ```bash
-mkdir spinParser && cd spinParser
+mkdir SpinParser && cd SpinParser
 ```
 Next, clone a copy of the source files
 ```bash
-git clone git@github.com:fbuessen/SpinParser.git spinParserSource
+git clone https://github.com/fbuessen/SpinParser.git SpinParserSource
 ```
-which should leave you with a directory `spinParserSource`, which, among other files and subdirectories, contains a file `CMakeLists.txt`. 
+which should leave you with a directory `SpinParserSource`, which, among other files and subdirectories, contains a file `CMakeLists.txt`. 
 
 ### Build from source
 
-Now it is time to compile the sources. It is recommended to build the software in a separate directory, which we will name `build`. 
-Furthermore, we want to create a directory `install` to which the final compiled software will be moved. 
-Therefore, we create two directories and enter the separate build directory by executing (from within the original working directory `spinParser`)
+Now it is time to compile the sources. It is recommended to build the software in a separate directory, which we shall name `build`. 
+Furthermore, we want to create a directory `install`, into which the final compiled software will be moved. 
+Therefore, we create two directories and enter the separate build directory by executing (from within the original working directory `SpinParser`)
 ```bash
 mkdir build && mkdir install && cd build
 ```
 We instruct cmake to generate the makefiles for our project by invoking
 ```bash
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../install ../spinParserSource/
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../install ../SpinParserSource
 ```
 The above command includes two command line arguments which tell cmake how to build and install the code. 
-The argument `-DCMAKE_BUILD_TYPE=Release` specifies that the generated code is intended to be used for production, i.e. the compiler will be instructed to perform code optimization. 
+The argument `-DCMAKE_BUILD_TYPE=Release` specifies that the generated code is intended to be used for production, i.e., the compiler is instructed to perform code optimization. 
 Alternatively, we could set the value to `Debug` which would instruct the compiler to include debug symbols. 
-The second argument, `-DCMAKE_INSTALL_PREFIX=../install` defines where the generated code will ultimately be moved. We intend to move it to the `install` directory that we created in the previous step. 
+The second argument, `-DCMAKE_INSTALL_PREFIX=../install` defines where the generated code will ultimately be moved. We intend to move it to the `install` directory which we created in the previous step. 
 
-When executing the command, cmake will attempt to locate all relevant libraries and files. 
+When executing the command, cmake attempts to locate all relevant libraries and files. 
 On a simple Ubuntu installation, it should usually succeed in doing so. 
-If this fails, for example because the libraries are installed in non-standard paths, it is possible to provide cmake with additional hints where to search for the libraries. 
-For the boost library, such hint would be similar to the command line argument `-DBOOST_ROOT=/path/to/boost/library`. For the HDF5 library, the hint would be `-DHDF5_ROOT=/path/to/hdf5/library`. 
+If this fails, for example because the libraries are installed in non-standard locations, it is possible to provide cmake with additional hints where to search for the libraries. 
+For the boost library, such hint would be along the lines of `-DBOOST_ROOT=/path/to/boost/library`. For the HDF5 library, the hint would be `-DHDF5_ROOT=/path/to/hdf5/library`. 
 
 Furthermore, the SpinParser build environment allows you to specify some additional options: 
 * `-DSPINPARSER_BUILD_TESTS=OFF` disables building tests (ON by default).
@@ -138,17 +139,17 @@ make -j6
 make test
 make install
 ```
-Note that in order to speed up the compilation, we included the argument `-j6`, which instructs to launch 6 processes for parallel compilation. The number should be adjusted to the number of available CPU cores in your system. 
+Note that in order to speed up the compilation, we included the argument `-j6`, which instructs the compiler to launch 6 processes for parallel compilation. The number should be adjusted to the number of available CPU cores on your system. 
 
-When the compilation is finished, the final software has been installed to the the `install` subdirectory, which we enter by executing
+When the compilation is done, the final software is installed in the `install` subdirectory, which we enter by executing
 ```bash
 cd ../install
 ```
-The file structure in this directory should look something like 
+The file structure in this directory should look like this: 
 ```
 + install/
 	+ bin/
-		- spinParser
+		- SpinParser
 	+ doc/
 		- index.html
 		...
@@ -165,17 +166,16 @@ The file structure in this directory should look something like
 	+ res/
 		- lattices.xml
 		- models.xml
-		...
 ```
-The file `install/bin/spinParser` is the main executable. 
-Some example definitions of lattices and models are included in `install/res/lattices.xml` and `install/res/models.xml`, respectively. 
-The developer documentation / API reference is located in `install/doc/index.html`, which you can open in your browser for reading. 
+The file `bin/SpinParser` is the main executable. 
+Some example definitions of lattices and models are included in `res/lattices.xml` and `res/models.xml`, respectively. 
+The developer documentation / API reference is located in `doc/index.html`, which you can open in your browser for reading. 
 
 ### Install optional tools
-The SpinParser ships with a few optional tools which help in the evaluation of pf-FRG calculations; they are located in the `install/opt`. 
+The SpinParser ships with a few optional tools which help in the evaluation of pf-FRG calculations; they are located in the `opt` directory. 
 
-Most importantly, the collection contains some Python scripts located in `install/opt/python`. 
-In order to use the Python tools, the directory `install/opt/python` should be added to the `$PYTHONPATH` environment variable, such that the scripts can be found by the Python installation. 
+Most importantly, the collection contains some Python scripts located in `opt/python`. 
+In order to use the Python tools, the directory `opt/python` should be added to the `$PYTHONPATH` environment variable, such that the scripts can be found by the Python installation. 
 
 The Python module `spinparser.ldf` provides the following functions: 
 - plot: Used to plot and verify lattice spin models used in SpinParser calculations. See the section "Verify the model implementation" for an example application. 
@@ -199,8 +199,8 @@ help(spinparser.obs.getCorrelation)
 Furthermore, the collection contains a Mathematica interface, which builds on the Python scripts. 
 In order to use these tools, Mathematica must be [set up](https://reference.wolfram.com/language/ref/externalevaluationsystem/Python.html) to correctly interface with Python. 
 Furthermore, the Python tools must correctly set up to be available via `import spinparser`. 
-The Mathematica scripts are located in the directory `install/opt/mathematica`. 
-For convenient use, the directory should be added to the Mathematica search path, e.g. by calling `AppendTo[$Path, "install/opt/mathematica"]` in Mathematica. 
+The Mathematica scripts are located in the directory `opt/mathematica`. 
+For convenient use, the directory should be added to the Mathematica search path, e.g. by calling `AppendTo[$Path, "opt/mathematica"]` in Mathematica. 
 
 Available functions are: 
 - GetLatticePrimitives: Analogous to the Python version.
@@ -217,7 +217,7 @@ Usage instructions for the functions listed above can be obtained via the `?` fu
 
 
 ## Quick start
-Performing a calculation with the help of SpinParser consists of three stages:
+Performing a calculation with the help of SpinParser consists of four steps:
 1. Prepare a task file and define the microscopic lattice and spin model.
 2. Ensure that your implementation is correct. 
 3. Run the calculation. 
@@ -227,7 +227,7 @@ Performing a calculation with the help of SpinParser consists of three stages:
 ### Prepare a task file
 The task file is an XML document which holds all input required to perform an FRG calculation.
 This includes a reference to the underlying lattice, the spin model, information about frequency and cutoff discretizations, and instructions on the measurements to perform. 
-An example task file is included in the SpinParser installation under `install/examples/square-Heisenberg.xml`: 
+An example task file is included in the SpinParser installation at `examples/square-Heisenberg.xml`: 
 ```XML
 <task>
 	<parameters>
@@ -257,7 +257,7 @@ Alternatively, an explicit list of values can specified by choosing `discretizat
 The cutoff discretization is automatically generated as an exponential distribution <img src="doc/assets/equation_4.png" style="vertical-align:-3pt"> down to the smallest cutoff value <img src="doc/assets/equation_5.png" style="vertical-align:-3pt">, according to the specification in the node `<cutoff discretization="exponential">`. 
 Just like in the specification of the frequency discretization, it is also possible to specify `discretization="manual"`.
 
-The lattice graph `<lattice name="square" range="4"/>` will be generated to include all lattice sites up to a four lattice-bond radius around a reference site. The name of the lattice, `square`, is a reference to a lattice definition found elsewhere. The actual lattice definition is found in the resource file `install/res/lattices.xml` file: 
+The lattice graph `<lattice name="square" range="4"/>` will be generated to include all lattice sites up to a four lattice-bond distance around a reference site. The name of the lattice, `square`, is a reference to a lattice definition found elsewhere. The actual lattice definition is found in the resource file `res/lattices.xml` file: 
 ```XML
 <unitcell name="square">
 	<primitive x="1" y="0" z="0" />
@@ -270,61 +270,62 @@ The lattice graph `<lattice name="square" range="4"/>` will be generated to incl
 	<bond from="0" to="0" dx="0" dy="1" dz="0" />
 </unitcell>
 ```
-The software will scan all `*.xml` files in the directory `../res/` relative to the SpinParser executable for lattice implementations. 
-If the directory does not exist, it will scan the directory `../../res/` or the directory where the executable is located. 
+The software scans all `*.xml` files in the directory `../res` relative to the SpinParser executable for lattice implementations. 
+If the directory does not exist, it scans the directory `../../res/` or the directory where the executable itself is located. 
 Alternatively, the resource search path can be set manually by specifying the `--resourcePath` command line argument when launching SpinParser. 
 
 A lattice definition consists of three `primitive` lattice vectors spanning the unit cell; each is defined by their x, y, and z component. 
 The lattice unit cell, in this example, contains one basis site at the origin. Multiple basis sites are in principle possible, in which case they are enumerated by unique IDs according to their order, starting at 0. 
-Finally, the lattice graph is generated according to the lattice bonds: each bond connects two lattice sites, `from` and `to` (referenced by their ID), which may either lie within the same unit cell, or be offset by dx, dy or dz unit cells into the direction of the first, second or third lattice vector, respectively. 
+Finally, the lattice graph is generated according to the lattice bonds: Each bond connects two lattice sites, `from` and `to` (referenced by their ID), which may either lie within the same unit cell or be offset by dx, dy or dz unit cells into the direction of the first, second or third lattice vector, respectively. 
 
-Similarly, the spin model `<model name="square-heisenberg" symmetry="SU2">` references the model `square-heisenberg` defined in the file `install/res/models.xml`:
+Similarly, the spin model `<model name="square-heisenberg" symmetry="SU2">` references the model `square-heisenberg` defined in the file `res/models.xml`:
 ```XML
 <model name="square-heisenberg">
 	<interaction parameter="j" from="0,0,0,0" to="1,0,0,0" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="0,1,0,0" type="heisenberg" />
 </model>
 ```
-The software will scan all `*.xml` files in the directory `../res/` relative to the SpinParser executable for spin model implementations. 
-If the directory does not exist, it will scan the directory `../../res/` or the directory where the executable is located. 
+The software scans all `*.xml` files in the directory `../res/` relative to the SpinParser executable for spin model implementations. 
+If the directory does not exist, it scans the directory `../../res/` or the directory where the executable itself is located. 
 Alternatively, the resource search path can be set manually by specifying the `--resourcePath` command line argument when launching SpinParser. 
 
-The model definition comprises a list two-spin interactions. All interactions for one lattice unit cell need to be specified, the rest is inferred by periodicity of the lattice. 
+The model definition comprises a list two-spin interactions. All interactions for one lattice unit cell need to be specified, and the remaining interactions are inferred by periodicity of the lattice. 
 The interaction is between two lattice sites `from` and `to`, each referenced by a tuple (a1,a2,a3,b), corresponding to the lattice site in unit cell (a1,a2,a3) (in units of the lattice vectors) and basis site ID b. 
 The two-spin interaction type in this example is a Heisenberg interaction. 
 Interactions can also be specified more fine-grained by replacing `heisenberg` e.g. with `xy`, which would correspond to the two-spin interaction <img src="doc/assets/equation_6.png" style="vertical-align:-4pt">. 
 The `parameter` name is referenced in the task file to assign a numerical value to the coupling. 
-In our example above, in the line `<j>1.0</j>`, it is set to 1.0, with the sign convention such that the interaction is antiferromagnetic. 
+In our example for the task file above, in the line `<j>1.0</j>`, the coupling is set to 1.0, with the sign convention such that the interaction is antiferromagnetic. 
 
 The `symmetry` attribute in the model reference of the task file specifies which numerical backend to use. Possible options are `SU2` (compatible with SU(2)-symmetric Heisenberg interactions), `XYZ` (compatible with diagonal interactions) or `TRI` (compatible also with off-diagonal interactions). 
-You should generally use the numerical backend with the largest possible symmetry, as this will greatly reduce computation time. 
+You should generally use the numerical backend with the highest compatible symmetry, as this will greatly reduce computation time. 
 
 Finally, the line `<measurement name="correlation"/>` specifies that two-spin correlation measurements should be recorded. 
 
 ### Verify the model implementation
 To ensure that all interactions have been specified correctly, you can invoke the SpinParser (see also next section) with the command line argument `--debugLattice`, 
 ```bash
-./install/bin/spinParser --debugLattice install/examples/square-Heisenberg.xml
+bin/SpinParser --debugLattice examples/square-Heisenberg.xml
 ```
-which will not run the actual calculation, but only produce an output file `install/examples/square-Heisenberg.ldf`, which is an xml-type file which describes all relevant lattice sites with real space coordinates and all lattice bonds and interactions with the 3x3 interaction matrices as labels. 
+which does not run the actual calculation, but only produces an output file `examples/square-Heisenberg.ldf`, which is an xml-type file that describes all relevant lattice sites with real space coordinates, all lattice bonds, and all interactions with their 3x3 interaction matrices as labels. 
 
 The `.ldf` output file can conveniently be inspected with the help of the optional Python tools. 
 Running the Python command
 ```python
 import spinparser.ldf
-spinparser.ldf.plot('install/examples/square-Heisenberg.ldf', interactions=0)
+fig = spinparser.ldf.plot('examples/square-Heisenberg.ldf', interactions=0)fig.show()
 ```
-produces the graphical representation of the lattice, which was generated by SpinParser. 
+produces a graphical representation of the lattice which was generated by SpinParser. 
 The argument `interactions=0` specifies that only spin-spin interactions that involve the 0-th lattice site (i.e., the origin) should be displayed: 
 
 <p align="center"><img src="doc/assets/img_1.png"></p>
 
-The plot shows lattice sites in two blue and yellow. 
+The plot shows lattice sites in two colors, blue and yellow. 
 The yellow lattice sites mark the effective, symmetry-reduced set of sites which is actually being used in the numerical calculation. 
-One can tell from the output that only approximately 1/8 of all lattice sites has been used which leads to a huge speed improvement, since the numerical complexity scales with the square of the number of lattice sites. 
+One can tell from the output that only approximately 1/8 of all lattice sites have been used in the calculation, which leads to a huge speed improvement since the numerical complexity scales with the square of the number of lattice sites. 
 
-Two-spin interactions are represented by an arrow which points from lattice site S1 to site S2, and is labeled by a 3*3 interaction matrix M, which displays the coupling S1.M.S2. 
-We can tell that only diagonal entries are non-zero and of equal strength, which confirms that the Heisenberg-like interactions are defined correctly, and that all nearest neighbors are properly included. 
+Two-spin interactions are represented by an arrow which points from lattice site S1 to site S2, and which is labeled by a 3*3 interaction matrix M. 
+The interaction matrix displays the exchange constants in the interaction term S1.M.S2. 
+We can tell that only diagonal entries are non-zero and they are of equal strength, confirming that the Heisenberg-like interactions are defined correctly, and that all nearest neighbors are properly included. 
 
 We can now be confident to run the actual calculation. 
 
@@ -332,17 +333,17 @@ We can now be confident to run the actual calculation.
 ### Run the calculation
 Once the task file is prepared, you can launch the calculation by invoking
 ```bash
-./install/bin/spinParser install/examples/square-Heisenberg.xml
+bin/SpinParser examples/square-Heisenberg.xml
 ```
-The computation will use OpenMP to utilize the maximum number of available CPU cores according to the environment variable `OMP_NUM_THREADS`. 
+The computation uses OpenMP to utilize the maximum number of available CPU cores according to the environment variable `OMP_NUM_THREADS`. 
 
 If you are running the calculation on a distributed memory machine, you may launch SpinParser in MPI mode, e.g. 
 ```bash
-mpirun -n 8 install/bin/spinParser install/examples/square-Heisenberg.xml
+mpirun -n 8 bin/SpinParser examples/square-Heisenberg.xml
 ```
 The above command would launch the calculation in a hybrid OpenMP/MPI mode across 8 nodes, using the maximum number of available OpenMP threads on each node. 
 
-As the calculation progresses, an output file `install/examples/square-Heisenberg.obs` is generated which contains the measurement results as specified in the task file. 
+As the calculation progresses, an output file `examples/square-Heisenberg.obs` is generated which contains the measurement results as specified in the task file. 
 
 The calculation should produce progress reports in terminal output similar to the output listed below. 
 ```
@@ -372,9 +373,9 @@ The calculation should produce progress reports in terminal output similar to th
 ```
 
 ### Evaluate SpinParser output and measurements
-The result file `install/examples/square-Heisenberg.obs` is an HDF5 file which contains the two-spin correlation measurements. 
-It contains datasets like `/SU2CorZZ/data/measurement_0/data`, which is a list of two-spin correlations <img src="doc/assets/equation_7.png" style="vertical-align:-4pt"> with lattice sites n in the same order as listed in `/SU2CorZZ/meta/sites`. 
-Every dataset is performed at the cutoff value as specified in the attribute `/SU2CorZZ/data/measurement_0/cutoff`. 
+The result file `examples/square-Heisenberg.obs` is an HDF5 file which contains the two-spin correlation measurements. 
+It contains datasets like `/SU2CorZZ/data/measurement_0/data`, which is a list of two-spin correlations <img src="doc/assets/equation_7.png" style="vertical-align:-4pt"> with lattice sites n in the same order as listed in the dataset `/SU2CorZZ/meta/sites`. 
+Every dataset is generated at the cutoff value as specified in the attribute `/SU2CorZZ/data/measurement_0/cutoff`. 
 
 The data is now ready to be extracted and analyzed. 
 While the contents of the output files can be read directly from the HDF5 format, SpinParser includes a convenient Python library to import results. 
@@ -382,7 +383,7 @@ While the contents of the output files can be read directly from the HDF5 format
 For the example at hand, the square lattice antiferromagnet, we of course know that the resulting ground state should be antiferromagnetically ordered. 
 But let us pretend that we do not have any prior knowledge and perform a systematic analysis. 
 
-We would start by investigating the structure factor at a cutoff value where we would not expect the system to have transitioned into the low-temperature phase, e.g. at <img src="doc/assets/equation_8.png" style="vertical-align:-1pt">, which is twice the intrinsic coupling constant. 
+We would start by investigating the structure factor at a cutoff value where we do not expect the system to have transitioned into the low-temperature phase, e.g. at <img src="doc/assets/equation_8.png" style="vertical-align:-1pt">, which is twice the intrinsic coupling constant. 
 We plot the structure factor with the following Python code: 
 ```python
 import spinparser.obs as o
@@ -394,7 +395,7 @@ discretization = np.linspace(-np.pi, np.pi, 20)
 k=np.array([[x,y,0.0] for x in discretization for y in discretization])
 
 # import pf-FRG data
-data=o.getStructureFactor("install/examples/square-Heisenberg.obs", k, cutoff=2.0, verbose=False)
+data=o.getStructureFactor("examples/square-Heisenberg.obs", k, cutoff=2.0, verbose=False)
 data=data.reshape((len(discretization),len(discretization)))
 
 # plot structure factor
@@ -417,7 +418,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # read structure factor at k=(0,0) and k=(pi,pi)
-data=o.getStructureFactor("install/examples/square-Heisenberg.obs", [[0,0,0],[-np.pi, np.pi,0.0]], cutoff="all")
+data=o.getStructureFactor("examples/square-Heisenberg.obs", [[0,0,0],[-np.pi, np.pi,0.0]], cutoff="all")
 
 # plot structure factor flow
 plt.plot(data["cutoff"], data["data"])
@@ -446,7 +447,7 @@ discretization = np.linspace(-np.pi, np.pi, 20)
 k=np.array([[x,y,0.0] for x in discretization for y in discretization])
 
 # import pf-FRG data
-data=o.getStructureFactor("install/examples/square-Heisenberg.obs", k, cutoff=0.45, verbose=False)
+data=o.getStructureFactor("examples/square-Heisenberg.obs", k, cutoff=0.45, verbose=False)
 data=data.reshape((len(discretization),len(discretization)))
 
 # plot structure factor
@@ -458,7 +459,7 @@ plt.show()
 ```
 <p align="center"><img src="doc/assets/img_4.png"></p>
 
-We now see that the peaks around the Brillouin zone corners have become much sharper, as expected for magnetic long-range order. Note however, that since we are plotting the structure factor at a cutoff value just above the transition point, the peaks still have some finite width. 
+We now see that the peaks around the Brillouin zone corners have become much sharper, as expected for magnetic long-range order. Note, however, that since we are plotting the structure factor at a cutoff value just above the transition point, the peaks still have some finite width. 
 
 Similarly, we can inspect the real space correlations and confirm that neighboring sites are indeed correlated antiferromagnetically. 
 We plot the correlations with the following example code: 
@@ -468,7 +469,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # import the real-space correlations
-data=o.getCorrelation("install/examples/square-Heisenberg.obs", site="all", cutoff=0.45)
+data=o.getCorrelation("examples/square-Heisenberg.obs", site="all", cutoff=0.45)
 site=data["site"]
 
 # plot lattice
@@ -497,7 +498,7 @@ Again, it is important to keep in mind that we are plotting the result at a cuto
 
 Our finding that the square lattice Heisenberg antiferromagnet exhibits Néel order in the ground state is, of course, not surprising (given the the pf-FRG flow equations are formally solved at zero temperature, so the Mermin-Wagner theorem is not violated). 
 
-Yet, this simple example demonstrated how the SpinParser and the accompanying Python tools for data analysis can be used to study general quantum lattice spin models. 
+Yet, this simple example demonstrates how the SpinParser and the accompanying Python tools for data analysis can be used to study general quantum lattice spin models. 
 The general workflow, which we illustrated here, can be straightforwardly extended to more intricate spin models with more subtle magnetic ordering tendencies or, in the absence of a flow breakdown, quantum spin liquid ground states. 
 Such models are likely to require a finer frequency discretization, finer cutoff integration, and/or larger lattice size to give converged results. 
 
