@@ -1,0 +1,22 @@
+<task>
+	<parameters>
+		<frequency discretization="exponential">
+			<min>0.005</min>
+			<max>50.0</max>
+			<count>64</count>
+		</frequency>
+		<cutoff discretization="exponential">
+			<max>50.0</max>
+			<min>0.01</min>
+			<step>0.98</step>
+		</cutoff>
+		<lattice name="cubic" range="7"/>
+		<model name="cubic-j1j2heisenberg" symmetry="SU2">
+			<j1>1.000000</j1>
+			<j2>0.000000</j2>
+		</model>
+	</parameters>
+	<measurements>
+		<measurement name="correlation"/>
+	</measurements>
+</task>

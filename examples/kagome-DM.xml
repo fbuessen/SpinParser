@@ -1,0 +1,22 @@
+<task>
+	<parameters>
+		<frequency discretization="exponential">
+			<min>0.005</min>
+			<max>50.0</max>
+			<count>64</count>
+		</frequency>
+		<cutoff discretization="exponential">
+			<max>50.0</max>
+			<min>0.01</min>
+			<step>0.98</step>
+		</cutoff>
+		<lattice name="kagome" range="7"/>
+		<model name="kagome-DM" symmetry="TRI">
+			<j>1.000000</j>
+			<d>0.000000</d>
+		</model>
+	</parameters>
+	<measurements>
+		<measurement name="correlation"/>
+	</measurements>
+</task>
