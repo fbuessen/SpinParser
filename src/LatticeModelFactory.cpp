@@ -160,16 +160,16 @@ namespace LatticeModelFactory
 							{
 								if (!p.second.get_optional<std::string>("<xmlattr>.from")) throw Exception(Exception::Type::InitializationError, "Invalid unit cell bond. 'from' attribute missing. ");
 								if (!p.second.get_optional<std::string>("<xmlattr>.to")) throw Exception(Exception::Type::InitializationError, "Invalid unit cell bond. 'to' attribute missing. ");
-								if (!p.second.get_optional<std::string>("<xmlattr>.dx")) throw Exception(Exception::Type::InitializationError, "Invalid unit cell bond. 'dx' attribute missing. ");
-								if (!p.second.get_optional<std::string>("<xmlattr>.dy")) throw Exception(Exception::Type::InitializationError, "Invalid unit cell bond. 'dy' attribute missing. ");
-								if (!p.second.get_optional<std::string>("<xmlattr>.dz")) throw Exception(Exception::Type::InitializationError, "Invalid unit cell bond. 'dz attribute missing. ");
+								if (!p.second.get_optional<std::string>("<xmlattr>.da0")) throw Exception(Exception::Type::InitializationError, "Invalid unit cell bond. 'da0' attribute missing. ");
+								if (!p.second.get_optional<std::string>("<xmlattr>.da1")) throw Exception(Exception::Type::InitializationError, "Invalid unit cell bond. 'da1' attribute missing. ");
+								if (!p.second.get_optional<std::string>("<xmlattr>.da2")) throw Exception(Exception::Type::InitializationError, "Invalid unit cell bond. 'da2' attribute missing. ");
 
 								int from = std::stoi(p.second.get<std::string>("<xmlattr>.from"));
 								int to = std::stoi(p.second.get<std::string>("<xmlattr>.to"));
-								int dx = std::stoi(p.second.get<std::string>("<xmlattr>.dx"));
-								int dy = std::stoi(p.second.get<std::string>("<xmlattr>.dy"));
-								int dz = std::stoi(p.second.get<std::string>("<xmlattr>.dz"));
-								this->latticeBonds.push_back(LatticeBond(from, to, dx, dy, dz));
+								int da0 = std::stoi(p.second.get<std::string>("<xmlattr>.da0"));
+								int da1 = std::stoi(p.second.get<std::string>("<xmlattr>.da1"));
+								int da2 = std::stoi(p.second.get<std::string>("<xmlattr>.da2"));
+								this->latticeBonds.push_back(LatticeBond(from, to, da0, da1, da2));
 							}
 						}
 						return true;

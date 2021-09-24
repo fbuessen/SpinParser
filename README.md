@@ -266,8 +266,8 @@ The lattice graph `<lattice name="square" range="4"/>` will be generated to incl
 
 	<site x="0" y="0" z="0" />
 
-	<bond from="0" to="0" dx="1" dy="0" dz="0" />
-	<bond from="0" to="0" dx="0" dy="1" dz="0" />
+	<bond from="0" to="0" da0="1" da1="0" da2="0" />
+	<bond from="0" to="0" da0="0" da1="1" da2="0" />
 </unitcell>
 ```
 The software scans all `*.xml` files in the directory `../res` relative to the SpinParser executable for lattice implementations. 
@@ -474,9 +474,9 @@ site=data["site"]
 
 # plot lattice
 for s1 in data["site"]:
-    for s2 in data["site"]:
-        if np.linalg.norm([s1[0]-s2[0], s1[1]-s2[1]]) <= 1.01:
-            plt.plot([s1[0], s2[0]], [s1[1], s2[1]], 'gray')
+	for s2 in data["site"]:
+		if np.linalg.norm([s1[0]-s2[0], s1[1]-s2[1]]) <= 1.01:
+			plt.plot([s1[0], s2[0]], [s1[1], s2[1]], 'gray')
 
 # plot correlations
 x = [s[0] for s in data["site"]]

@@ -5,8 +5,8 @@
 
 	<site x="0" y="0" z="0" />
 
-	<bond from="0" to="0" dx="1" dy="0" dz="0" />
-	<bond from="0" to="0" dx="0" dy="1" dz="0" />
+	<bond from="0" to="0" da0="1" da1="0" da2="0" />
+	<bond from="0" to="0" da0="0" da1="1" da2="0" />
 </unitcell>
 
 <unitcell name="triangular">
@@ -16,9 +16,9 @@
 
 	<site x="0" y="0" z="0" />
 
-	<bond from="0" to="0" dx="0" dy="-1" dz="0" />
-	<bond from="0" to="0" dx="-1" dy="0" dz="0" />
-	<bond from="0" to="0" dx="-1" dy="1" dz="0" />
+	<bond from="0" to="0" da0="0" da1="-1" da2="0" />
+	<bond from="0" to="0" da0="-1" da1="0" da2="0" />
+	<bond from="0" to="0" da0="-1" da1="1" da2="0" />
 </unitcell>
 
 <unitcell name="honeycomb">
@@ -29,9 +29,9 @@
 	<site x="0" y="0" z="0" />
 	<site x="1" y="0" z="0" />
 
-	<bond from="0" to="1" dx="0" dy="0" dz="0" />
-	<bond from="1" to="0" dx="1" dy="0" dz="0" />
-	<bond from="1" to="0" dx="0" dy="1" dz="0" />
+	<bond from="0" to="1" da0="0" da1="0" da2="0" />
+	<bond from="1" to="0" da0="1" da1="0" da2="0" />
+	<bond from="1" to="0" da0="0" da1="1" da2="0" />
 </unitcell>
 
 <unitcell name="kagome">
@@ -43,12 +43,12 @@
 	<site x="1" y="0" z="0" />
 	<site x="1/2" y="sqrt(3)/2" z="0" />
 
-	<bond from="0" to="1" dx="0" dy="0" dz="0" />
-	<bond from="0" to="2" dx="0" dy="0" dz="0" />
-	<bond from="1" to="2" dx="0" dy="0" dz="0" />
-	<bond from="1" to="0" dx="1" dy="0" dz="0" />
-	<bond from="2" to="0" dx="0" dy="1" dz="0" />
-	<bond from="2" to="1" dx="-1" dy="1" dz="0" />
+	<bond from="0" to="1" da0="0" da1="0" da2="0" />
+	<bond from="0" to="2" da0="0" da1="0" da2="0" />
+	<bond from="1" to="2" da0="0" da1="0" da2="0" />
+	<bond from="1" to="0" da0="1" da1="0" da2="0" />
+	<bond from="2" to="0" da0="0" da1="1" da2="0" />
+	<bond from="2" to="1" da0="-1" da1="1" da2="0" />
 </unitcell>
 
 <unitcell name="cubic">
@@ -58,9 +58,9 @@
 
 	<site x="0" y="0" z="0" />
 
-	<bond from="0" to="0" dx="1" dy="0" dz="0" />
-	<bond from="0" to="0" dx="0" dy="1" dz="0" />
-	<bond from="0" to="0" dx="0" dy="0" dz="1" />
+	<bond from="0" to="0" da0="1" da1="0" da2="0" />
+	<bond from="0" to="0" da0="0" da1="1" da2="0" />
+	<bond from="0" to="0" da0="0" da1="0" da2="1" />
 </unitcell>
 
 <unitcell name="fcc">
@@ -70,12 +70,12 @@
 
 	<site x="0" y="0" z="0" />
 
-	<bond from="0" to="0" dx="1" dy="0" dz="0" />
-	<bond from="0" to="0" dx="0" dy="1" dz="-1" />
-	<bond from="0" to="0" dx="0" dy="1" dz="0" />
-	<bond from="0" to="0" dx="-1" dy="0" dz="1" />
-	<bond from="0" to="0" dx="0" dy="0" dz="1" />
-	<bond from="0" to="0" dx="-1" dy="1" dz="0" />
+	<bond from="0" to="0" da0="1" da1="0" da2="0" />
+	<bond from="0" to="0" da0="0" da1="1" da2="-1" />
+	<bond from="0" to="0" da0="0" da1="1" da2="0" />
+	<bond from="0" to="0" da0="-1" da1="0" da2="1" />
+	<bond from="0" to="0" da0="0" da1="0" da2="1" />
+	<bond from="0" to="0" da0="-1" da1="1" da2="0" />
 </unitcell>
 
 <unitcell name="diamond">
@@ -86,10 +86,10 @@
 	<site x="0" y="0" z="0" />
 	<site x="1/sqrt(3)" y="1/sqrt(3)" z="1/sqrt(3)" />
 
-	<bond from="0" to="1" dx="0" dy="0" dz="0" />
-	<bond from="1" to="0" dx="1" dy="0" dz="0" />
-	<bond from="1" to="0" dx="0" dy="1" dz="0" />
-	<bond from="1" to="0" dx="0" dy="0" dz="1" />
+	<bond from="0" to="1" da0="0" da1="0" da2="0" />
+	<bond from="1" to="0" da0="1" da1="0" da2="0" />
+	<bond from="1" to="0" da0="0" da1="1" da2="0" />
+	<bond from="1" to="0" da0="0" da1="0" da2="1" />
 </unitcell>
 
 <unitcell name="hyperoctagon">
@@ -102,12 +102,12 @@
 	<site x="3/sqrt(8)" y="1/sqrt(8)" z="-1/sqrt(8)" />
 	<site x="7/sqrt(8)" y="3/sqrt(8)" z="1/sqrt(8)" />
 
-	<bond from="0" to="2" dx="0" dy="0" dz="0" />
-	<bond from="1" to="2" dx="0" dy="0" dz="0" />
-	<bond from="1" to="3" dx="0" dy="0" dz="0" />
-	<bond from="1" to="0" dx="0" dy="1" dz="0" />
-	<bond from="3" to="2" dx="0" dy="0" dz="1" />
-	<bond from="3" to="0" dx="1" dy="0" dz="0" />
+	<bond from="0" to="2" da0="0" da1="0" da2="0" />
+	<bond from="1" to="2" da0="0" da1="0" da2="0" />
+	<bond from="1" to="3" da0="0" da1="0" da2="0" />
+	<bond from="1" to="0" da0="0" da1="1" da2="0" />
+	<bond from="3" to="2" da0="0" da1="0" da2="1" />
+	<bond from="3" to="0" da0="1" da1="0" da2="0" />
 </unitcell>
 
 <unitcell name="hyperkagome">
@@ -128,30 +128,30 @@
 	<site x="1/2/sqrt(2)" y="7/2/sqrt(2)" z="1/2/sqrt(2)" />
 	<site x="1/2/sqrt(2)" y="5/2/sqrt(2)" z="3/2/sqrt(2)" />
 	
-	<bond from="0" to="1" dx="0" dy="0" dz="0" />
-	<bond from="1" to="2" dx="0" dy="0" dz="0" />
-	<bond from="0" to="2" dx="0" dy="0" dz="0" />
-	<bond from="2" to="3" dx="0" dy="0" dz="0" />
-	<bond from="3" to="4" dx="0" dy="0" dz="0" />
-	<bond from="3" to="8" dx="0" dy="0" dz="0" />
-	<bond from="4" to="8" dx="0" dy="0" dz="0" />
-	<bond from="4" to="5" dx="0" dy="0" dz="0" />
-	<bond from="5" to="6" dx="0" dy="0" dz="0" />
-	<bond from="5" to="7" dx="0" dy="0" dz="0" />
-	<bond from="6" to="7" dx="0" dy="0" dz="0" />
-	<bond from="6" to="8" dx="0" dy="-1" dz="0" />
-	<bond from="6" to="9" dx="0" dy="-1" dz="0" />
-	<bond from="8" to="9" dx="0" dy="0" dz="0" />
-	<bond from="9" to="10" dx="0" dy="0" dz="0" />
-	<bond from="9" to="11" dx="0" dy="0" dz="0" />
-	<bond from="10" to="11" dx="0" dy="0" dz="0" />
-	<bond from="0" to="7" dx="1" dy="0" dz="-1" />
-	<bond from="0" to="10" dx="1" dy="-1" dz="0" />
-	<bond from="2" to="11" dx="1" dy="0" dz="0" />
-	<bond from="3" to="11" dx="1" dy="0" dz="0" />
-	<bond from="4" to="1" dx="0" dy="0" dz="1" />
-	<bond from="5" to="1" dx="0" dy="0" dz="1" />
-	<bond from="7" to="10" dx="0" dy="-1" dz="1" />
+	<bond from="0" to="1" da0="0" da1="0" da2="0" />
+	<bond from="1" to="2" da0="0" da1="0" da2="0" />
+	<bond from="0" to="2" da0="0" da1="0" da2="0" />
+	<bond from="2" to="3" da0="0" da1="0" da2="0" />
+	<bond from="3" to="4" da0="0" da1="0" da2="0" />
+	<bond from="3" to="8" da0="0" da1="0" da2="0" />
+	<bond from="4" to="8" da0="0" da1="0" da2="0" />
+	<bond from="4" to="5" da0="0" da1="0" da2="0" />
+	<bond from="5" to="6" da0="0" da1="0" da2="0" />
+	<bond from="5" to="7" da0="0" da1="0" da2="0" />
+	<bond from="6" to="7" da0="0" da1="0" da2="0" />
+	<bond from="6" to="8" da0="0" da1="-1" da2="0" />
+	<bond from="6" to="9" da0="0" da1="-1" da2="0" />
+	<bond from="8" to="9" da0="0" da1="0" da2="0" />
+	<bond from="9" to="10" da0="0" da1="0" da2="0" />
+	<bond from="9" to="11" da0="0" da1="0" da2="0" />
+	<bond from="10" to="11" da0="0" da1="0" da2="0" />
+	<bond from="0" to="7" da0="1" da1="0" da2="-1" />
+	<bond from="0" to="10" da0="1" da1="-1" da2="0" />
+	<bond from="2" to="11" da0="1" da1="0" da2="0" />
+	<bond from="3" to="11" da0="1" da1="0" da2="0" />
+	<bond from="4" to="1" da0="0" da1="0" da2="1" />
+	<bond from="5" to="1" da0="0" da1="0" da2="1" />
+	<bond from="7" to="10" da0="0" da1="-1" da2="1" />
 </unitcell>
 
 <unitcell name="hyperhoneycomb">
@@ -164,10 +164,10 @@
 	<site x="1/sqrt(2)" y="2/sqrt(2)" z="1/sqrt(2)" />
 	<site x="0" y="-1/sqrt(2)" z="1/sqrt(2)" />
 
-	<bond from="0" to="1" dx="0" dy="0" dz="0" />
-	<bond from="0" to="3" dx="0" dy="0" dz="0" />
-	<bond from="0" to="3" dx="1" dy="0" dz="0" />
-	<bond from="1" to="2" dx="0" dy="0" dz="0" />
-	<bond from="1" to="2" dx="0" dy="-1" dz="0" />
-	<bond from="2" to="3" dx="0" dy="0" dz="1" />
+	<bond from="0" to="1" da0="0" da1="0" da2="0" />
+	<bond from="0" to="3" da0="0" da1="0" da2="0" />
+	<bond from="0" to="3" da0="1" da1="0" da2="0" />
+	<bond from="1" to="2" da0="0" da1="0" da2="0" />
+	<bond from="1" to="2" da0="0" da1="-1" da2="0" />
+	<bond from="2" to="3" da0="0" da1="0" da2="1" />
 </unitcell>
