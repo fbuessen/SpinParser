@@ -276,7 +276,7 @@ Alternatively, the resource search path can be set manually by specifying the `-
 
 A lattice definition consists of three `primitive` lattice vectors spanning the unit cell; each is defined by their x, y, and z component. 
 The lattice unit cell, in this example, contains one basis site at the origin. Multiple basis sites are in principle possible, in which case they are enumerated by unique IDs according to their order, starting at 0. 
-Finally, the lattice graph is generated according to the lattice bonds: Each bond connects two lattice sites, `from` and `to` (referenced by their ID), which may either lie within the same unit cell or be offset by dx, dy or dz unit cells into the direction of the first, second or third lattice vector, respectively. 
+Finally, the lattice graph is generated according to the lattice bonds: Each bond connects two lattice sites, `from` and `to` (referenced by their ID), which may either lie within the same unit cell or be offset by da0, da1 or da2 unit cells into the direction of the first, second or third lattice vector, respectively. 
 
 Similarly, the spin model `<model name="square-heisenberg" symmetry="SU2">` references the model `square-heisenberg` defined in the file `res/models.xml`:
 ```XML
