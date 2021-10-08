@@ -1,7 +1,6 @@
 [![](https://github.com/fbuessen/SpinParser/actions/workflows/build.yml/badge.svg)](https://github.com/fbuessen/SpinParser/actions/workflows/build.yml)
 
 # SpinParser
-
 SpinParser ("Spin Pseudofermion Algorithms for Research on Spin Ensembles via Renormalization") is a software platform to perform pseudofermion functional renormalization group (pf-FRG) calculations to solve lattice spin models of quantum magnetism. 
 
 The pf-FRG algorithm has first been proposed in [[Reuther and Wölfle (2010)](http://dx.doi.org/10.1103/PhysRevB.81.144410)] for Heisenberg models on two-dimensional lattices geometries. 
@@ -12,6 +11,25 @@ The current implementation of the SpinParser is based on a generalized approach 
 
 where the sum over lattice sites i and j is defined on arbitrary two- or three-dimensional lattices and the spin operator <img src="doc/assets/equation_2.png" style="vertical-align:-4pt"> resembles the <img src="doc/assets/equation_3.png" style="vertical-align:-3pt"> component of a spin-1/2 moment at lattice site i.
 
+In the following, this document provides installation instructions and a quick start guide. 
+**A more thorough documentation can be found in the accompanying publication, Ref. [[Buessen (2021)](https://arxiv.org/abs/2109.13317)]**.
+
+
+## Citation
+If the SpinParser project benefits your research, please acknowledge it by citing the following manuscript: 
+
+- Finn Lasse Buessen, *The SpinParser software for pseudofermion functional renormalization group calculations on quantum magnets*, arXiv:2109.13317 (2021)
+
+```
+@article{Buessen2021,
+	title = {{The SpinParser software for pseudofermion functional renormalization group calculations on quantum magnets}},
+	author = {Buessen, Finn Lasse},
+	year = {2021}
+	eprint = {2109.13317},
+	archivePrefix = {arXiv},
+	url = {http://arxiv.org/abs/2109.13317}
+}
+```
 
 ## Table of contents
 - [Overview](#overview)
@@ -28,7 +46,6 @@ where the sum over lattice sites i and j is defined on arbitrary two- or three-d
 - [Developer documentation](#developer-documentation)
 
 ## Overview
-
 Owing to the large class of spin models that can be studied within the pf-FRG approach, the aim of this software implementation is to provide fast, yet flexible numerics for the efficient solution of pf-FRG flow equations. 
 
 To allow for easy and universal use, the spin model and the underlying lattice geometry can be defined as plain-text `.xml` files. 
@@ -47,13 +64,11 @@ This software contains three different numerical cores, which are optimized for 
 - A numerical core for general spin-1/2 models which may include off-diagonal two-spin interactions as put forward in [[Buessen et al. (2019)](http://dx.doi.org/10.1103/PhysRevB.100.125164)]
 
 ## Installation
-
 SpinParser needs to be built from source. The build process makes use of the [cmake](https://cmake.org) build system. 
 SpinParser is relatively easy to compile and only depends on a few libraries. 
 The build process is described in a step-by-step guide below, exemplified for Ubuntu 20.04 LTS. 
 
 ### Prerequisites
-
 You need to ensure that the following software and libraries are installed on the system: 
 * Cmake (version 3.16 or newer)
 * Boost (version 1.71.0 or newer)
@@ -92,7 +107,6 @@ The SpinParser might also successfully build with older library versions.
 Especially when tests are disabled (see below), older versions of boost are also compatible; if the generation of documentation files is disabled (see below), older versions of cmake might work. 
 
 ### Download sources
-
 Create and enter a working directory, say 
 ```bash
 mkdir SpinParser && cd SpinParser
@@ -104,7 +118,6 @@ git clone https://github.com/fbuessen/SpinParser.git SpinParserSource
 which should leave you with a directory `SpinParserSource`, which, among other files and subdirectories, contains a file `CMakeLists.txt`. 
 
 ### Build from source
-
 Now it is time to compile the sources. It is recommended to build the software in a separate directory, which we shall name `build`. 
 Furthermore, we want to create a directory `install`, into which the final compiled software will be moved. 
 Therefore, we create two directories and enter the separate build directory by executing (from within the original working directory `SpinParser`)
