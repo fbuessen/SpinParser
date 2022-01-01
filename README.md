@@ -213,7 +213,7 @@ Furthermore, the collection contains a Mathematica interface, which builds on th
 In order to use these tools, Mathematica must be [set up](https://reference.wolfram.com/language/ref/externalevaluationsystem/Python.html) to correctly interface with Python. 
 Furthermore, the Python tools must correctly set up to be available via `import spinparser`. 
 The Mathematica scripts are located in the directory `opt/mathematica`. 
-For convenient use, the directory should be added to the Mathematica search path, e.g. by calling `AppendTo[$Path, "opt/mathematica"]` in Mathematica. 
+For convenient use, the directory should be added to the Mathematica search path, e.g. by calling `AppendTo[$Path, "/absolute/path/to/install/opt/mathematica"]` in Mathematica. 
 
 Available functions are: 
 - GetLatticePrimitives: Analogous to the Python version.
