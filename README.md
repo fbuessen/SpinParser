@@ -256,6 +256,7 @@ An example task file is included in the SpinParser installation at `examples/squ
 		</cutoff>
 		<lattice name="square" range="4"/>
 		<model name="square-heisenberg" symmetry="SU2">
+			<spin>0.5</spin>
 			<j>1.0</j>
 		</model>
 	</parameters>
@@ -309,8 +310,15 @@ Interactions can also be specified more fine-grained by replacing `heisenberg` e
 The `parameter` name is referenced in the task file to assign a numerical value to the coupling. 
 In our example for the task file above, in the line `<j>1.0</j>`, the coupling is set to 1.0, with the sign convention such that the interaction is antiferromagnetic. 
 
-The `symmetry` attribute in the model reference of the task file specifies which numerical backend to use. Possible options are `SU2` (compatible with SU(2)-symmetric Heisenberg interactions), `XYZ` (compatible with diagonal interactions) or `TRI` (compatible also with off-diagonal interactions). 
+The `symmetry` attribute in the model reference of the task file specifies which numerical backend to use. Possible options are `SU2` (compatible with SU(2)-symmetric Heisenberg interactions for spin-S moments), `XYZ` (compatible with diagonal interactions) or `TRI` (compatible also with off-diagonal interactions). 
 You should generally use the numerical backend with the highest compatible symmetry, as this will greatly reduce computation time. 
+
+In case the `SU2` numerical backend is chosen, it is possible to define a custom spin length. 
+In our example task file above, a spin length S=1/2 is defined as a child node of the `model` block via the line `<spin>0.5</spin>`. 
+Note, however, that the generalization to larger spin length must be taken with care, because unphysical states in the pseudofermion representation of spin operators may occur; a detailed discussion of the spin-S generalization is found in Ref. [[Baez and Reuther (2017)](http://dx.doi.org/10.1103/PhysRevB.96.045144)].
+The numerical backends `XYZ` and `TRI` only support calculations at S=1/2. 
+In addition, a global energy normalization, which is applied to all exchange constants, can be defined via `<normalization>1.0</normalization>`. 
+If such definition is absent, a default value of 2S is assumed. 
 
 Finally, the line `<measurement name="correlation"/>` specifies that two-spin correlation measurements should be recorded. 
 

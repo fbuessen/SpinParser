@@ -12,6 +12,7 @@
 		</cutoff>
 		<lattice name="square" range="4"/>
 		<model name="square-heisenberg" symmetry="SU2">
+			<spin>0.5</spin>
 			<j>1.0</j>
 		</model>
 	</parameters>
