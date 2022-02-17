@@ -307,6 +307,7 @@ The model definition comprises a list two-spin interactions. All interactions fo
 The interaction is between two lattice sites `from` and `to`, each referenced by a tuple (a1,a2,a3,b), corresponding to the lattice site in unit cell (a1,a2,a3) (in units of the lattice vectors) and basis site ID b. 
 The two-spin interaction type in this example is a Heisenberg interaction. 
 Interactions can also be specified more fine-grained by replacing `heisenberg` e.g. with `xy`, which would correspond to the two-spin interaction <img src="doc/assets/equation_6.png" style="vertical-align:-4pt">. 
+Note that all spin operators are specified in their local frame of reference. 
 The `parameter` name is referenced in the task file to assign a numerical value to the coupling. 
 In our example for the task file above, in the line `<j>1.0</j>`, the coupling is set to 1.0, with the sign convention such that the interaction is antiferromagnetic. 
 
@@ -321,6 +322,7 @@ In addition, a global energy normalization, which is applied to all exchange con
 If such definition is absent, a default value of 2S is assumed. 
 
 Finally, the line `<measurement name="correlation"/>` specifies that two-spin correlation measurements should be recorded. 
+Note that the two-spin correlations are measured with respect to the local frames of reference  of the two participating spin operators. 
 
 ### Verify the model implementation
 To ensure that all interactions have been specified correctly, you can invoke the SpinParser (see also next section) with the command line argument `--debugLattice`, 
