@@ -415,11 +415,11 @@ import matplotlib.pyplot as plt
 
 # set up the Brillouin zone discretization
 discretization = np.linspace(-np.pi, np.pi, 20)
-k=np.array([[x,y,0.0] for x in discretization for y in discretization])
+k = np.array([[x,y,0.0] for x in discretization for y in discretization])
 
 # import pf-FRG data
-data=o.getStructureFactor("examples/square-Heisenberg.obs", k, cutoff=2.0, verbose=False)
-data=data.reshape((len(discretization),len(discretization)))
+data = o.getStructureFactor("examples/square-Heisenberg.obs", k, cutoff=2.0, verbose=False)
+data = data.reshape((len(discretization),len(discretization)))
 
 # plot structure factor
 plt.imshow(data, extent=(-np.pi,np.pi,-np.pi,np.pi), vmin=0.0)
@@ -432,6 +432,28 @@ plt.show()
 The resulting structure factor, already at this large cutoff, appears to indicate a preference for the <img src="doc/assets/equation_9.png" style="vertical-align:-4pt"> ordering vector, which is associated with antiferromagnetic Néel order. 
 <p align="center"><img src="doc/assets/img_2.png"></p>
 
+Note that the Python function `getStructureFactor` is defined to simply compute the Fourier transform of the real-space two-spin correlations 
+<p align="center"><img src="doc/assets/equation_10.png"></p>
+
+where <img src="doc/assets/equation_11.png" style="vertical-align:-4pt"> are the diagonal components of the cutoff-dependent two-spin correlation function in real space (measuring the zero-frequency component of the dynamic spin correlations). 
+In case the computation of more intricate correlation functions is desired, an appropriate reweighting of terms can easily be done with a few lines of Python code. 
+Fore example, the momentum dependence arising from magnetic neutron scattering can be incorporated as follows:
+```python
+# import packages and set up the Brillouin zone discretization as before
+# [...]
+
+# import pf-FRG data and compute weighted structure factor
+data = np.zeros(len(k))
+for mu in [0,1,2]:
+	weight = [1.0 - q[mu]*q[mu]/np.dot(q,q) for q in k] # weight factor for each momentum point
+	component = "XYZ"[mu]+"XYZ"[mu] # component is either "XX", "YY", or "ZZ"
+	chi = o.getStructureFactor("examples/square-Heisenberg.obs", k, cutoff=2.0, component=component, verbose=False)[0,:] # import pf-FRG data
+	data += weight * chi # collect structure factor with additional momentum-dependent modulation
+data = data.reshape((len(discretization),len(discretization)))
+```
+Note that by providing the `component` keyword to the `getStructureFactor` function, we can specifically address any combination of different spin indices in the correlation function. 
+In this way, even more complicated correlation functions can be modeled, e.g. the separation of spin-flip and non-spin-flip channels for polzarized neutron scattering simulations. 
+
 Next, we should investigate whether the system undergoes an actual magnetic ordering transition, or whether the magnetic moments remain fluctuating (despite showing a weak preference for antiferromagnetic correlations). 
 
 For this purpose, we study the flow of the antiferromagnetic correlations as a function of the RG cutoff. Again, the data can be conveniently obtained in a few lines of Python code: 
@@ -441,7 +463,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # read structure factor at k=(0,0) and k=(pi,pi)
-data=o.getStructureFactor("examples/square-Heisenberg.obs", [[0,0,0],[-np.pi, np.pi,0.0]], cutoff="all")
+data = o.getStructureFactor("examples/square-Heisenberg.obs", [[0,0,0],[-np.pi, np.pi,0.0]], cutoff="all")
 
 # plot structure factor flow
 plt.plot(data["cutoff"], data["data"])
@@ -467,11 +489,11 @@ import matplotlib.pyplot as plt
 
 # set up the Brillouin zone discretization
 discretization = np.linspace(-np.pi, np.pi, 20)
-k=np.array([[x,y,0.0] for x in discretization for y in discretization])
+k = np.array([[x,y,0.0] for x in discretization for y in discretization])
 
 # import pf-FRG data
-data=o.getStructureFactor("examples/square-Heisenberg.obs", k, cutoff=0.45, verbose=False)
-data=data.reshape((len(discretization),len(discretization)))
+data = o.getStructureFactor("examples/square-Heisenberg.obs", k, cutoff=0.45, verbose=False)
+data = data.reshape((len(discretization),len(discretization)))
 
 # plot structure factor
 plt.imshow(data, extent=(-np.pi,np.pi,-np.pi,np.pi), vmin=0.0)
@@ -492,8 +514,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # import the real-space correlations
-data=o.getCorrelation("examples/square-Heisenberg.obs", site="all", cutoff=0.45)
-site=data["site"]
+data = o.getCorrelation("examples/square-Heisenberg.obs", site="all", cutoff=0.45)
+site = data["site"]
 
 # plot lattice
 for s1 in data["site"]:
@@ -505,7 +527,7 @@ for s1 in data["site"]:
 x = [s[0] for s in data["site"]]
 y = [s[1] for s in data["site"]]
 c = ['blue' if c >= 0.0 else 'red' for c in data["data"].flatten()]
-c[0] = 'gray' #mark reference site
+c[0] = 'gray' # mark reference site
 s = [300.0 * abs(c) for c in data["data"].flatten()]
 plt.scatter(x, y, c=c, s=s, zorder=10)
 plt.gca().set_aspect(1)

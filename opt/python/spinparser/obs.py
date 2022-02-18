@@ -206,6 +206,7 @@ def getCorrelation(obsfile, cutoff="all", site="all", reference=0, component="al
 def getStructureFactor(obsfile, momentum, cutoff="all", component="all", verbose=True):
 	"""
 	Calculate the spin structure factor from the spin correlations stored in an observable file. 
+	The structure factor is defined as the Fourier transform of the real-space correlations, normalized by the number of lattice sites, $\chi^{\mu\nu}(k)=\frac{1}{N_L}\sum_{i,j} exp(ik(r_i-r_j))\chi^{\mu\nu}_{ij}$.
 
 	Args:
 		obsfile (str): Path to the obsfile.
