@@ -40,12 +40,6 @@ def __getObsAttributes(obsIdentifier):
 		return [ "CorrelationYY", "LatticeData" ]
 	elif (obsIdentifier == "XYZCorZZ"):
 		return [ "CorrelationZZ", "LatticeData" ]
-	elif (obsIdentifier == "XXZCorDD"):
-		return [ "CorrelationDD", "LatticeData" ]
-	elif (obsIdentifier == "XXZCorXX"):
-		return [ "CorrelationXX", "CorrelationYY", "LatticeData" ]
-	elif (obsIdentifier == "XXZCorZZ"):
-		return [ "CorrelationZZ", "LatticeData" ]
 	elif (obsIdentifier == "SU2CorDD"):
 		return [ "CorrelationDD", "LatticeData" ]
 	elif (obsIdentifier == "SU2CorZZ"):
