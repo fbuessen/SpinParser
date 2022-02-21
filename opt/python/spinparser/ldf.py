@@ -4,7 +4,7 @@ from matplotlib.patches import FancyArrowPatch
 from mpl_toolkits.mplot3d import proj3d
 import numpy as np
 
-class Arrow3D(FancyArrowPatch):
+class _Arrow3D(FancyArrowPatch):
     """
     Draw 3d arrows. 
     Based on https://stackoverflow.com/questions/22867620/putting-arrowheads-on-vectors-in-matplotlibs-3d-plot
@@ -34,6 +34,7 @@ def plot(filename, interactions="all"):
     interactions : {"all" | "none" | int}
         Specify the interactions to include in the plot. 
         If an integer is provided, plot all interactions that involve the lattice site with that identifier. 
+        Note that the reference site at the lattice center typically has the identifier "0". 
     """
     #read ldf file
     sites = []
@@ -78,7 +79,7 @@ def plot(filename, interactions="all"):
         s2 = next(i for i in sites if i["id"]==interaction["to"])
 
         if interactions == "all" or interaction["from"] == interactions or interaction["to"] == interactions:
-            a = Arrow3D([s1["x"], s2["x"]], [s1["y"], s2["y"]], [s1["z"], s2["z"]], mutation_scale=10, lw=3, arrowstyle="-|>", color="r")
+            a = _Arrow3D([s1["x"], s2["x"]], [s1["y"], s2["y"]], [s1["z"], s2["z"]], mutation_scale=10, lw=3, arrowstyle="-|>", color="r")
             ax.add_artist(a)
 
             label = "%6.2f %6.2f %6.2f\n%6.2f %6.2f %6.2f\n%6.2f %6.2f %6.2f" % (interaction["value"][0][0], interaction["value"][0][1], interaction["value"][0][2], interaction["value"][1][0], interaction["value"][1][1], interaction["value"][1][2], interaction["value"][2][0], interaction["value"][2][1], interaction["value"][2][2])
