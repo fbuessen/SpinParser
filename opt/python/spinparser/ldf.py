@@ -2,21 +2,23 @@ import re
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch
 from mpl_toolkits.mplot3d import proj3d
+import numpy as np
 
 class Arrow3D(FancyArrowPatch):
     """
     Draw 3d arrows. 
     Based on https://stackoverflow.com/questions/22867620/putting-arrowheads-on-vectors-in-matplotlibs-3d-plot
+    with fix for Matplotlib v3.5.0 from https://github.com/matplotlib/matplotlib/issues/21688
     """
     def __init__(self, xs, ys, zs, *args, **kwargs):
         FancyArrowPatch.__init__(self, (0,0), (0,0), *args, **kwargs)
         self._verts3d = xs, ys, zs
 
-    def draw(self, renderer):
+    def do_3d_projection(self, renderer=None):
         xs3d, ys3d, zs3d = self._verts3d
-        xs, ys, zs = proj3d.proj_transform(xs3d, ys3d, zs3d, renderer.M)
+        xs, ys, zs = proj3d.proj_transform(xs3d, ys3d, zs3d, self.axes.M)
         self.set_positions((xs[0],ys[0]),(xs[1],ys[1]))
-        FancyArrowPatch.draw(self, renderer)
+        return np.min(zs)
 
 def plot(filename, interactions="all"):
     """
@@ -80,6 +82,6 @@ def plot(filename, interactions="all"):
             ax.add_artist(a)
 
             label = "%6.2f %6.2f %6.2f\n%6.2f %6.2f %6.2f\n%6.2f %6.2f %6.2f" % (interaction["value"][0][0], interaction["value"][0][1], interaction["value"][0][2], interaction["value"][1][0], interaction["value"][1][1], interaction["value"][1][2], interaction["value"][2][0], interaction["value"][2][1], interaction["value"][2][2])
-            ax.text(0.5*(s1["x"]+s2["x"]), 0.5*(s1["y"]+s2["y"]), 0.5*(s1["z"]+s2["z"]), label, fontsize="xx-small", horizontalalignment='center', verticalalignment='center')
+            ax.text(0.5*(s1["x"]+s2["x"]), 0.5*(s1["y"]+s2["y"]), 0.5*(s1["z"]+s2["z"]), label, fontsize="xx-small", horizontalalignment='center', verticalalignment='center',zorder=float('inf'))
 
     return plt
