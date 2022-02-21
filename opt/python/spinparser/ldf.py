@@ -1,3 +1,8 @@
+"""
+Visualization tools for lattice graphs that are stored in the ".ldf" file format. 
+Useful to inspect lattice spin models used in SpinParser calculations.
+"""
+
 import re
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch
