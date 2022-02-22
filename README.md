@@ -80,6 +80,7 @@ Furthermore, in order for the optional python tools to work and tests to be eval
 * numpy
 * h5py
 * matplotlib
+* pdoc3
 
 To ensure that all these libraries are installed, invoke the following OS specific commands in your terminal. (You might want to drop the `python` part if you already have a Python installation.)
 
@@ -90,7 +91,7 @@ sudo apt install git cmake libboost-all-dev libhdf5-dev libopenmpi-dev doxygen g
 ```
 
 ```bash
-python3 -m pip install numpy h5py matplotlib
+python3 -m pip install numpy h5py matplotlib pdoc3
 ```
 
 *MacOS (via Homebrew):*
@@ -100,7 +101,7 @@ brew install git cmake hdf5 boost doxygen graphviz libomp python
 ```
 
 ```bash
-python -m pip install numpy h5py matplotlib
+python -m pip install numpy h5py matplotlib pdoc3
 ```
 
 The SpinParser might also successfully build with older library versions. 
@@ -189,6 +190,8 @@ The SpinParser ships with a few optional tools which help in the evaluation of p
 
 Most importantly, the collection contains some Python scripts located in `opt/python`. 
 In order to use the Python tools, the directory `opt/python` should be added to the `$PYTHONPATH` environment variable, such that the scripts can be found by the Python installation. 
+
+**The separate documentation for the Python tools can be found [here](https://fbuessen.github.io/SpinParser/doc-python)**
 
 The Python module `spinparser.ldf` provides the following functions: 
 - plot: Used to plot and verify lattice spin models used in SpinParser calculations. See the section "Verify the model implementation" for an example application. 
@@ -552,4 +555,4 @@ Such models are likely to require a finer frequency discretization, finer cutoff
 ## Developer documentation
 
 The SpinParser application, without modification, is already suited to solve a broad class of spin models on customizable lattice geometries. 
-However, some users might wish to modify or extend the code; for this purpose, a developer documentation of the underlying code exists and can be found [here](https://fbuessen.github.io/SpinParser).
+However, some users might wish to modify or extend the code; for this purpose, a developer documentation of the underlying code exists and can be found [here](https://fbuessen.github.io/SpinParser/doc-dev).

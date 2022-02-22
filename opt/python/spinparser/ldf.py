@@ -47,21 +47,21 @@ def plot(filename, interactions="all"):
     interacs = []
     with open(filename, "r") as file:
         for line in file:
-            if re.search("(?<=<)site", line):
-                id = int(re.search("(?<=\W)id=\"(\d+)\"", line)[1])
-                x = float(re.search("(?<=\W)x=\"(-?\d+\.\d*)\"", line)[1])
-                y = float(re.search("(?<=\W)y=\"(-?\d+\.\d*)\"", line)[1])
-                z = float(re.search("(?<=\W)z=\"(-?\d+\.\d*)\"", line)[1])
-                parametrized = True if re.search("(?<=\W)parametrized=\"(true|false)\"", line)[1] == "true" else False
+            if re.search(r'(?<=<)site', line):
+                id = int(re.search(r'(?<=\W)id="(\d+)"', line)[1])
+                x = float(re.search(r'(?<=\W)x="(-?\d+\.\d*)"', line)[1])
+                y = float(re.search(r'(?<=\W)y="(-?\d+\.\d*)"', line)[1])
+                z = float(re.search(r'(?<=\W)z="(-?\d+\.\d*)"', line)[1])
+                parametrized = True if re.search(r'(?<=\W)parametrized="(true|false)"', line)[1] == "true" else False
                 sites.append({"id":id, "x":x, "y":y, "z":z, "parametrized":parametrized})
-            elif re.search("(?<=<)bond", line):
-                fromId = int(re.search("(?<=\W)from=\"(\d+)\"", line)[1])
-                toId = int(re.search("(?<=\W)to=\"(\d+)\"", line)[1])
+            elif re.search(r'(?<=<)bond', line):
+                fromId = int(re.search(r'(?<=\W)from="(\d+)"', line)[1])
+                toId = int(re.search(r'(?<=\W)to="(\d+)"', line)[1])
                 bonds.append({"from":fromId, "to":toId})
-            elif re.search("(?<=<)interaction", line):
-                fromId = int(re.search("(?<=\W)from=\"(\d+)\"", line)[1])
-                toId = int(re.search("(?<=\W)to=\"(\d+)\"", line)[1])
-                value = eval(re.search("(?<=\W)value=\"([\[\d\.\]\,\-]+)\"", line)[1])
+            elif re.search(r'(?<=<)interaction', line):
+                fromId = int(re.search(r'(?<=\W)from="(\d+)"', line)[1])
+                toId = int(re.search(r'(?<=\W)to="(\d+)"', line)[1])
+                value = eval(re.search(r'(?<=\W)value="([\[\d\.\]\,\-]+)"', line)[1])
                 interacs.append({"from":fromId, "to":toId, "value":value})
 
     #prepare plot

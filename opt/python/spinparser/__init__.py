@@ -2,8 +2,9 @@
 Overview
 ----------
 This is the user documenation for the optional Python tools, which are included in the SpinParser software. 
-The developer documentation for the SpinParser software itself can be found [here](https://fbuessen.github.io/SpinParser/doc). 
-See also the usage examples in the SpinParser [quick start guide](https://github.com/fbuessen/SpinParser#evaluate-spinparser-output-and-measurements). 
+See also the usage examples on the project's [Github page](https://github.com/fbuessen/SpinParser#evaluate-spinparser-output-and-measurements). 
+
+**The developer documentation for the SpinParser software itself can be found [here](../doc-dev/index.html).**
 
 Installation
 ----------
