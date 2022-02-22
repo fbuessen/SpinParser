@@ -1,9 +1,11 @@
 # SpinParser developer documentation
 
 This part of the documentation only contains information which is relevant if you are planning to modify or extend the source code of the SpinParser applications. 
-
 The SpinParser application, without modification, is already suited to solve a broad class of spin models on customizable lattice geometries. 
-**The user manual, as well as installation instructions, can be found on the project's [Github page](https://github.com/fbuessen/SpinParser)**. 
+
+**The user manual, as well as installation instructions, can be found on the project's [Github page](https://github.com/fbuessen/SpinParser).**
+
+**The user manual for the optional Python tools, which are included in the SpinParser software, can be found [here](../doc-python/index.html).**
 
 Potential reasons to modify the source code could include: 
 - implementation of custom, specialized flow equations

@@ -1,0 +1,1 @@
+install(FILES ${PROJECT_SOURCE_DIR}/doc/doc-index/index.html DESTINATION doc/)

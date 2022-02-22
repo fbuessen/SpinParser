@@ -1,4 +1,5 @@
-[![](https://github.com/fbuessen/SpinParser/actions/workflows/build.yml/badge.svg)](https://github.com/fbuessen/SpinParser/actions/workflows/build.yml)
+[![](https://github.com/fbuessen/SpinParser/actions/workflows/test.yml/badge.svg)](https://github.com/fbuessen/SpinParser/actions/workflows/test.yml)
+[![](https://github.com/fbuessen/SpinParser/actions/workflows/deploy.yml/badge.svg)](https://fbuessen.github.io/SpinParser)
 
 # SpinParser
 SpinParser ("Spin Pseudofermion Algorithms for Research on Spin Ensembles via Renormalization") is a software platform to perform pseudofermion functional renormalization group (pf-FRG) calculations to solve lattice spin models of quantum magnetism. 
@@ -80,6 +81,7 @@ Furthermore, in order for the optional python tools to work and tests to be eval
 * numpy
 * h5py
 * matplotlib
+* pdoc3
 
 To ensure that all these libraries are installed, invoke the following OS specific commands in your terminal. (You might want to drop the `python` part if you already have a Python installation.)
 
@@ -90,7 +92,7 @@ sudo apt install git cmake libboost-all-dev libhdf5-dev libopenmpi-dev doxygen g
 ```
 
 ```bash
-python3 -m pip install numpy h5py matplotlib
+python3 -m pip install numpy h5py matplotlib pdoc3
 ```
 
 *MacOS (via Homebrew):*
@@ -100,7 +102,7 @@ brew install git cmake hdf5 boost doxygen graphviz libomp python
 ```
 
 ```bash
-python -m pip install numpy h5py matplotlib
+python -m pip install numpy h5py matplotlib pdoc3
 ```
 
 The SpinParser might also successfully build with older library versions. 
@@ -190,6 +192,8 @@ The SpinParser ships with a few optional tools which help in the evaluation of p
 Most importantly, the collection contains some Python scripts located in `opt/python`. 
 In order to use the Python tools, the directory `opt/python` should be added to the `$PYTHONPATH` environment variable, such that the scripts can be found by the Python installation. 
 
+**The separate documentation for the Python tools can be found [here](https://fbuessen.github.io/SpinParser/doc-python).**
+
 The Python module `spinparser.ldf` provides the following functions: 
 - plot: Used to plot and verify lattice spin models used in SpinParser calculations. See the section "Verify the model implementation" for an example application. 
 
@@ -256,6 +260,7 @@ An example task file is included in the SpinParser installation at `examples/squ
 		</cutoff>
 		<lattice name="square" range="4"/>
 		<model name="square-heisenberg" symmetry="SU2">
+			<spin>0.5</spin>
 			<j>1.0</j>
 		</model>
 	</parameters>
@@ -306,13 +311,22 @@ The model definition comprises a list two-spin interactions. All interactions fo
 The interaction is between two lattice sites `from` and `to`, each referenced by a tuple (a1,a2,a3,b), corresponding to the lattice site in unit cell (a1,a2,a3) (in units of the lattice vectors) and basis site ID b. 
 The two-spin interaction type in this example is a Heisenberg interaction. 
 Interactions can also be specified more fine-grained by replacing `heisenberg` e.g. with `xy`, which would correspond to the two-spin interaction <img src="doc/assets/equation_6.png" style="vertical-align:-4pt">. 
+Note that all spin operators are specified in their local frame of reference. 
 The `parameter` name is referenced in the task file to assign a numerical value to the coupling. 
 In our example for the task file above, in the line `<j>1.0</j>`, the coupling is set to 1.0, with the sign convention such that the interaction is antiferromagnetic. 
 
-The `symmetry` attribute in the model reference of the task file specifies which numerical backend to use. Possible options are `SU2` (compatible with SU(2)-symmetric Heisenberg interactions), `XYZ` (compatible with diagonal interactions) or `TRI` (compatible also with off-diagonal interactions). 
+The `symmetry` attribute in the model reference of the task file specifies which numerical backend to use. Possible options are `SU2` (compatible with SU(2)-symmetric Heisenberg interactions for spin-S moments), `XYZ` (compatible with diagonal interactions) or `TRI` (compatible also with off-diagonal interactions). 
 You should generally use the numerical backend with the highest compatible symmetry, as this will greatly reduce computation time. 
 
+In case the `SU2` numerical backend is chosen, it is possible to define a custom spin length. 
+In our example task file above, a spin length S=1/2 is defined as a child node of the `model` block via the line `<spin>0.5</spin>`. 
+Note, however, that the generalization to larger spin length must be taken with care, because unphysical states in the pseudofermion representation of spin operators may occur; a detailed discussion of the spin-S generalization is found in Ref. [[Baez and Reuther (2017)](http://dx.doi.org/10.1103/PhysRevB.96.045144)].
+The numerical backends `XYZ` and `TRI` only support calculations at S=1/2. 
+In addition, a global energy normalization, which is applied to all exchange constants, can be defined via `<normalization>1.0</normalization>`. 
+If such definition is absent, a default value of 2S is assumed. 
+
 Finally, the line `<measurement name="correlation"/>` specifies that two-spin correlation measurements should be recorded. 
+Note that the two-spin correlations are measured with respect to the local frames of reference  of the two participating spin operators. 
 
 ### Verify the model implementation
 To ensure that all interactions have been specified correctly, you can invoke the SpinParser (see also next section) with the command line argument `--debugLattice`, 
@@ -325,7 +339,8 @@ The `.ldf` output file can conveniently be inspected with the help of the option
 Running the Python command
 ```python
 import spinparser.ldf
-fig = spinparser.ldf.plot('examples/square-Heisenberg.ldf', interactions=0)fig.show()
+fig = spinparser.ldf.plot('examples/square-Heisenberg.ldf', interactions=0)
+fig.show()
 ```
 produces a graphical representation of the lattice which was generated by SpinParser. 
 The argument `interactions=0` specifies that only spin-spin interactions that involve the 0-th lattice site (i.e., the origin) should be displayed: 
@@ -405,11 +420,11 @@ import matplotlib.pyplot as plt
 
 # set up the Brillouin zone discretization
 discretization = np.linspace(-np.pi, np.pi, 20)
-k=np.array([[x,y,0.0] for x in discretization for y in discretization])
+k = np.array([[x,y,0.0] for x in discretization for y in discretization])
 
 # import pf-FRG data
-data=o.getStructureFactor("examples/square-Heisenberg.obs", k, cutoff=2.0, verbose=False)
-data=data.reshape((len(discretization),len(discretization)))
+data = o.getStructureFactor("examples/square-Heisenberg.obs", k, cutoff=2.0, verbose=False)
+data = data.reshape((len(discretization),len(discretization)))
 
 # plot structure factor
 plt.imshow(data, extent=(-np.pi,np.pi,-np.pi,np.pi), vmin=0.0)
@@ -422,6 +437,28 @@ plt.show()
 The resulting structure factor, already at this large cutoff, appears to indicate a preference for the <img src="doc/assets/equation_9.png" style="vertical-align:-4pt"> ordering vector, which is associated with antiferromagnetic Néel order. 
 <p align="center"><img src="doc/assets/img_2.png"></p>
 
+Note that the Python function `getStructureFactor` is defined to simply compute the Fourier transform of the real-space two-spin correlations 
+<p align="center"><img src="doc/assets/equation_10.png"></p>
+
+where <img src="doc/assets/equation_11.png" style="vertical-align:-4pt"> are the diagonal components of the cutoff-dependent two-spin correlation function in real space (measuring the zero-frequency component of the dynamic spin correlations). 
+In case the computation of more intricate correlation functions is desired, an appropriate reweighting of terms can easily be done with a few lines of Python code. 
+Fore example, the momentum dependence arising from magnetic neutron scattering can be incorporated as follows:
+```python
+# import packages and set up the Brillouin zone discretization as before
+# [...]
+
+# import pf-FRG data and compute weighted structure factor
+data = np.zeros(len(k))
+for mu in [0,1,2]:
+	weight = [1.0 - q[mu]*q[mu]/np.dot(q,q) for q in k] # weight factor for each momentum point
+	component = "XYZ"[mu]+"XYZ"[mu] # component is either "XX", "YY", or "ZZ"
+	chi = o.getStructureFactor("examples/square-Heisenberg.obs", k, cutoff=2.0, component=component, verbose=False)[0,:] # import pf-FRG data
+	data += weight * chi # collect structure factor with additional momentum-dependent modulation
+data = data.reshape((len(discretization),len(discretization)))
+```
+Note that by providing the `component` keyword to the `getStructureFactor` function, we can specifically address any combination of different spin indices in the correlation function. 
+In this way, even more complicated correlation functions can be modeled, e.g. the separation of spin-flip and non-spin-flip channels for polzarized neutron scattering simulations. 
+
 Next, we should investigate whether the system undergoes an actual magnetic ordering transition, or whether the magnetic moments remain fluctuating (despite showing a weak preference for antiferromagnetic correlations). 
 
 For this purpose, we study the flow of the antiferromagnetic correlations as a function of the RG cutoff. Again, the data can be conveniently obtained in a few lines of Python code: 
@@ -431,7 +468,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # read structure factor at k=(0,0) and k=(pi,pi)
-data=o.getStructureFactor("examples/square-Heisenberg.obs", [[0,0,0],[-np.pi, np.pi,0.0]], cutoff="all")
+data = o.getStructureFactor("examples/square-Heisenberg.obs", [[0,0,0],[-np.pi, np.pi,0.0]], cutoff="all")
 
 # plot structure factor flow
 plt.plot(data["cutoff"], data["data"])
@@ -457,11 +494,11 @@ import matplotlib.pyplot as plt
 
 # set up the Brillouin zone discretization
 discretization = np.linspace(-np.pi, np.pi, 20)
-k=np.array([[x,y,0.0] for x in discretization for y in discretization])
+k = np.array([[x,y,0.0] for x in discretization for y in discretization])
 
 # import pf-FRG data
-data=o.getStructureFactor("examples/square-Heisenberg.obs", k, cutoff=0.45, verbose=False)
-data=data.reshape((len(discretization),len(discretization)))
+data = o.getStructureFactor("examples/square-Heisenberg.obs", k, cutoff=0.45, verbose=False)
+data = data.reshape((len(discretization),len(discretization)))
 
 # plot structure factor
 plt.imshow(data, extent=(-np.pi,np.pi,-np.pi,np.pi), vmin=0.0)
@@ -482,8 +519,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # import the real-space correlations
-data=o.getCorrelation("examples/square-Heisenberg.obs", site="all", cutoff=0.45)
-site=data["site"]
+data = o.getCorrelation("examples/square-Heisenberg.obs", site="all", cutoff=0.45)
+site = data["site"]
 
 # plot lattice
 for s1 in data["site"]:
@@ -495,7 +532,7 @@ for s1 in data["site"]:
 x = [s[0] for s in data["site"]]
 y = [s[1] for s in data["site"]]
 c = ['blue' if c >= 0.0 else 'red' for c in data["data"].flatten()]
-c[0] = 'gray' #mark reference site
+c[0] = 'gray' # mark reference site
 s = [300.0 * abs(c) for c in data["data"].flatten()]
 plt.scatter(x, y, c=c, s=s, zorder=10)
 plt.gca().set_aspect(1)
@@ -519,4 +556,4 @@ Such models are likely to require a finer frequency discretization, finer cutoff
 ## Developer documentation
 
 The SpinParser application, without modification, is already suited to solve a broad class of spin models on customizable lattice geometries. 
-However, some users might wish to modify or extend the code; for this purpose, a developer documentation of the underlying code exists and can be found [here](https://fbuessen.github.io/SpinParser).
+However, some users might wish to modify or extend the code; for this purpose, a developer documentation of the underlying code exists and can be found [here](https://fbuessen.github.io/SpinParser/doc-dev).

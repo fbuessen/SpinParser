@@ -3,7 +3,7 @@ name: Build and test
 on: [push, pull_request]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -13,8 +13,8 @@ jobs:
           CMAKE_C_COMPILER: g++
           CMAKE_CXX_COMPILER: g++
         run: |
-          sudo apt install -y cmake libboost-all-dev libhdf5-dev libopenmpi-dev doxygen graphviz python3
-          python -m pip install numpy h5py
+          sudo apt-get update && sudo apt-get install -y cmake libboost-all-dev libhdf5-dev libopenmpi-dev doxygen graphviz python3
+          python -m pip install numpy h5py pdoc3 matplotlib
       - name: Build
         run: |
           mkdir install && cmake -B ${{ github.workspace }}/build -DCMAKE_INSTALL_PREFIX=${{ github.workspace }}/install
@@ -22,11 +22,3 @@ jobs:
       - name: Test
         working-directory: ${{ github.workspace }}/build
         run: ctest --verbose
-      - name: Install
-        run: cmake --install ${{github.workspace}}/build
-      - name: Deploy documentation
-        uses: peaceiris/actions-gh-pages@v3
-        with: 
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ github.workspace }}/install/doc
-          publish_branch: documentation

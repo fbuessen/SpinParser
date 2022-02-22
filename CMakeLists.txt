@@ -42,7 +42,9 @@ if(SPINPARSER_BUILD_TESTS)
     add_subdirectory(test)
 endif()
 if(SPINPARSER_BUILD_DOCUMENTATION)
-    add_subdirectory(doc)
+    add_subdirectory(doc/doc-index)
+    add_subdirectory(doc/doc-dev)
+    add_subdirectory(doc/doc-python)
 endif()
 
 #install supplemental files
