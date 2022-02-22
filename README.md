@@ -191,7 +191,7 @@ The SpinParser ships with a few optional tools which help in the evaluation of p
 Most importantly, the collection contains some Python scripts located in `opt/python`. 
 In order to use the Python tools, the directory `opt/python` should be added to the `$PYTHONPATH` environment variable, such that the scripts can be found by the Python installation. 
 
-**The separate documentation for the Python tools can be found [here](https://fbuessen.github.io/SpinParser/doc-python)**
+**The separate documentation for the Python tools can be found [here](https://fbuessen.github.io/SpinParser/doc-python).**
 
 The Python module `spinparser.ldf` provides the following functions: 
 - plot: Used to plot and verify lattice spin models used in SpinParser calculations. See the section "Verify the model implementation" for an example application. 
