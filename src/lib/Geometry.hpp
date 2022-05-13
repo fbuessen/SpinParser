@@ -542,10 +542,10 @@ namespace geometry
 	}
 
 	/**
-	 * @brief Matrix vector multiplication of 4x4 matrix and a three-dimensional vector by reducing the Mat4 object to its top left 3x3 block. 
+	 * @brief Matrix vector multiplication of 4x4 matrix and a three-dimensional vector by padding the vector with 1 in the fourth dimension and returning only the first three entries. 
 	 * 
 	 * @tparam T Underlying fundamental data type. 
-	 * @param lhs Left oeprand. 
+	 * @param lhs Left operand. 
 	 * @param rhs Right operand. 
 	 * @return Vec3<T> Result of lhs * rhs. 
 	 */
