@@ -610,8 +610,8 @@ namespace LatticeModelFactory
 					double e = (transformation * getSitePosition(uc, site2) - getSitePosition(uc, ref)).norm();
 					if (e > __EPSILON) throw Exception(Exception::Type::InternalError, "Lattice symmetry calculation has failed. (Deviation of symmetry transformed site [s2] from target [ref] is " + std::to_string(e) + ", should be zero)");
 
-					//T(n1) should match of c1
-					e = (transformation * getSitePosition(uc, n1) - getSitePosition(uc, c1)).norm();
+					//T(n1)-T(site2) should be collinear with c1-ref
+					e = cross((transformation * getSitePosition(uc, n1) - transformation * getSitePosition(uc, site2)).normalize(), (getSitePosition(uc, c1) - getSitePosition(uc, ref)).normalize()).norm();
 					if (e > __EPSILON) throw Exception(Exception::Type::InternalError, "Lattice symmetry calculation has failed. (Deviation of symmetry transformed site [n1] from target [c1] is " + std::to_string(e) + ", should be zero)");
 
 					//T(n2) should be coplanar with c1-ref and c2-ref
