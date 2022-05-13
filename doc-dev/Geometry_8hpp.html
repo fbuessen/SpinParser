@@ -190,7 +190,7 @@ Functions</h2></td></tr>
 <tr class="separator:af64640539f65633b5304e592c03c13c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa55f04a9ea3ca8f8c456b0b04b01de82"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa55f04a9ea3ca8f8c456b0b04b01de82"><td class="memTemplItemLeft" align="right" valign="top">Vec3&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Geometry_8hpp.html#aa55f04a9ea3ca8f8c456b0b04b01de82">geometry::operator*</a> (const Mat4&lt; T &gt; &amp;lhs, const Vec3&lt; T &gt; &amp;rhs)</td></tr>
-<tr class="memdesc:aa55f04a9ea3ca8f8c456b0b04b01de82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix vector multiplication of 4x4 matrix and a three-dimensional vector by reducing the <a class="el" href="structgeometry_1_1Mat4.html" title="4x4 dimensional matrix.">Mat4</a> object to its top left 3x3 block.  <a href="Geometry_8hpp.html#aa55f04a9ea3ca8f8c456b0b04b01de82">More...</a><br /></td></tr>
+<tr class="memdesc:aa55f04a9ea3ca8f8c456b0b04b01de82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix vector multiplication of 4x4 matrix and a three-dimensional vector by padding the vector with 1 in the fourth dimension and returning only the first three entries.  <a href="Geometry_8hpp.html#aa55f04a9ea3ca8f8c456b0b04b01de82">More...</a><br /></td></tr>
 <tr class="separator:aa55f04a9ea3ca8f8c456b0b04b01de82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -410,7 +410,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Matrix vector multiplication of 4x4 matrix and a three-dimensional vector by reducing the Mat4 object to its top left 3x3 block. </p>
+<p>Matrix vector multiplication of 4x4 matrix and a three-dimensional vector by padding the vector with 1 in the fourth dimension and returning only the first three entries. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>Underlying fundamental data type. </td></tr>
@@ -419,7 +419,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lhs</td><td>Left oeprand. </td></tr>
+    <tr><td class="paramname">lhs</td><td>Left operand. </td></tr>
     <tr><td class="paramname">rhs</td><td>Right operand. </td></tr>
   </table>
   </dd>
